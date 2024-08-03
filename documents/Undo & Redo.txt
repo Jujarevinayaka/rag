@@ -1,0 +1,13 @@
+Undo & Redo
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the navigation bar.
+Click on the Scenes button in the top right corner.
+Create a new scene or open an existing scene.
+Adding a sphere to showcase undo and redo functionality.
+Click on the Shape button in the toolbar to open the Shape Selection menu.
+Select Sphere from the Shape Selection menu.
+Click on the Surface button in the 3D Object panel to switch to Surface Editing mode.
+Click on the Color Picker in the 3D Object panel to change the color of the selected object.
+Select a new color from the Color Palette that appears in the 3D Object panel.
+You can undo the color by clicking on the Undo button.
+Click on the Redo button to reapply the color.

@@ -1,0 +1,16 @@
+Spatial Audio
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the navigation bar.
+Click on the Scenes button in the pop-up.
+Create a new scene or open an existing project.
+Click on the Add button in the Editor toolbar.
+Select the Audio Source option from the drop-down.
+Click on the Select a Sound File button in the Spatial Audio Attributes panel.
+Choose the audio file from the Sound Library.
+Play the selected audio file using the Play button in the Spatial Audio Attributes panel.
+Stop the audio file using the Pause button in the Spatial Audio Attributes panel.
+Click the Reset button in the Spatial Audio Attributes panel to reset the audio.
+Click the Loop button in the Spatial Audio Attributes panel to start playing the audio in loop.
+Adjust the Volume slider in the Spatial Audio Attributes panel.
+Adjust the Maximum Distance slider in the Spatial Audio Interaction panel to set the radius of the sound.
+You can add multiple spatial audio sources using the Add button.

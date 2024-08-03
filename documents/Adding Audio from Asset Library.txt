@@ -1,0 +1,15 @@
+Adding Audio from Asset Library
+Step 1: Access Dashboard
+Click on the Dashboard button in the navigation bar.
+Step 2: Select Projects Tab
+Select the Projects tab in the navigation bar.
+Step 3: Navigate to Scenes
+Click on the Scenes button in the top right corner.
+Step 4: Create or Open Scene
+Create a new scene or open an existing one.
+Step 5: Access Assets
+Click on the Assets button in the navigation bar.
+Step 6: Choose Audio from Asset Library
+Select the Audio tab in the Asset Library and choose the desired audio clip from the list of audio files.
+Step 7: Add Audio to Project
+Click on the Create Audio button to add the selected audio to your project.

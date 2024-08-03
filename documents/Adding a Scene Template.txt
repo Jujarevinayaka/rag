@@ -1,0 +1,9 @@
+Adding a Scene Template
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the navigation bar.
+Click on the Scenes button in the top right corner.
+Create a new scene or open an existing scene.
+Click on the Assets button in the navigation bar to open the Assets panel.
+Select Scene from the Asset Library categories.
+Choose Anime Bedroom or any other template from the list of scenes.
+Click on the Load Scene button to load the selected scene.

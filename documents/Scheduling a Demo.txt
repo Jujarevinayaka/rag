@@ -1,0 +1,9 @@
+Scheduling a Demo
+Click on the Book a Demo button in the main content area.
+Click on the Book a Call button.
+Select the date for the demo call by clicking on the date in the calendar based on your availability.
+Pick a comfortable time.
+Click on Next.
+Add your details such as name, email, and a brief agenda for the meeting.
+Enter your phone number to receive text messages.
+Click the Schedule Event button to proceed with scheduling the event.

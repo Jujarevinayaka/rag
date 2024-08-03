@@ -1,0 +1,10 @@
+Connecting Sketchfab Account
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the User Dashboard.
+Click on the Scenes button.
+Create a new scene or use an existing scene.
+Click on the Assets button in the navigation bar to open the Assets panel.
+Switch to the third-party tab in the Asset Library.
+Click on the Sketchfab icon to connect your Sketchfab account.
+In the pop-up, click Accept to authorize True as Application to use your Sketchfab account.
+Your Sketchfab account is successfully connected.

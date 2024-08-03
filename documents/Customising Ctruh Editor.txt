@@ -1,0 +1,21 @@
+Customising Ctruh Editor
+1. Accessing the Dashboard
+Click on the Dashboard button in the navigation bar.
+2. Navigating to Projects
+Select the Projects tab at the top of the page.
+3. Managing Scenes
+Click on the Scenes button in the top right corner.
+Create a new scene or open an existing scene.
+4. Customizing Scene Preferences
+Click on Scene Preference to access customization options.
+Adjust the background color by clicking on Background Color.
+Change the grid color by clicking on the grid.
+Modify the ambient light intensity using the slider in the Scene Preference panel.
+5. Adding Background Audio
+Click on the folder icon to select a background audio for the scene.
+Select the desired audio file, such as Athena, from the Sound Library.
+Play, pause, or reset the background audio using the options in the Scene Preference panel.
+6. Audio Settings
+Utilize the Loop option to loop the background audio.
+Adjust the volume slider to control the audio volume in the Scene Preference panel.
+By following these steps, you can effectively customize True Editor to suit your editing needs and preferences.

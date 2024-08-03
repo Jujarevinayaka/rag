@@ -1,0 +1,11 @@
+Sign up using your Email ID and Phone number
+Click on the "Sign Up" button in the navigation bar.
+Click on the "Sign Up Manually" button.
+Enter your name in the text field.
+Enter your email address in the text field.
+Enter your password in the designated field.
+Enter your mobile number in the highlighted field on the form.
+Verify the CAPTCHA.
+Click the "Continue" button to proceed.
+Enter the OTP sent to your mobile number in the highlighted fields.
+Click the "Verify" button to proceed with the OTP verification.
