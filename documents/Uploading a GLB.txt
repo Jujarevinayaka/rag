@@ -1,7 +1,0 @@
-Uploading a GLB
-Click on the Dashboard button in the navigation bar.
-Select the Projects tab in the navigation bar.
-Click on the Scene button to switch to the Scene view.
-Click on the Create Scene button to start a new project.
-In the navigation bar, click on the Upload button to add new assets to your scene.
-Select the 3D model option from the Upload modal to import a 3D model file.

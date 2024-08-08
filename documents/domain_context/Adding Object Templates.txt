@@ -1,0 +1,14 @@
+Adding Object Templates
+Creating a New Scene
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the navigation bar.
+Click on the Scenes button in the top right corner.
+Press the Create Scene button to start a new project.
+Adding and Managing Assets
+Click on the Assets button in the toolbar to access assets.
+Select any object from an extensive collection of assets in the Object section in the Asset Library.
+Click on the Load Object button to add the selected brass vase to the scene.
+Click and drag to create a bound within which the object must be loaded.
+In the editor, notice the brass vase asset has been added to the assets list.
+Click on the focus icon next to the brass vase asset to focus the view on it.
+Reset the camera view to default.

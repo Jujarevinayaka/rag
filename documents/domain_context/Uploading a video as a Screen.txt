@@ -1,0 +1,14 @@
+Uploading a video as a Screen
+Click on the Dashboard button in the navigation bar.
+Click on the Projects tab in the navigation bar.
+Click on the Scenes button in the top right corner.
+Create a new scene or open an existing scene.
+Click on the Upload button in the editor to add assets to your scene.
+Select Video as Screen from the Upload menu.
+Toggle on the Always Face the Viewer option in the Screen Attributes panel for the screen to face you.
+Select the Play Pause button to play the video.
+Reset the video using the Reset button.
+You can loop the video using the Loop button in the panel.
+Adjust the volume using the Volume slider in the Properties panel.
+Change the orientation of the video to landscape or portrait using Orientation option in the Properties panel.
+You can change the aspect ratio of the screen. We support 16:9, 1:1, 3:4, and 1:2 for both portrait and landscape orientations.

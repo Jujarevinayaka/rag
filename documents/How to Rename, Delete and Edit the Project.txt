@@ -1,8 +1,0 @@
-How to Rename, Delete and Edit the Project
-Click on the Dashboard button in the navigation bar.
-Click on the Projects tab.
-Click on the Scenes tab to switch the view.
-Click on the Rename option for a project in the context menu to rename the scene.
-Click on Delete Project from the Project Options menu to delete the scene.
-Click on Confirm to delete the project.
-Click on Open in Editor from the Project Options menu to edit the project.

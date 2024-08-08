@@ -161,7 +161,7 @@ class DOCUMENTS:
         Create documents for the LLM to be fine-tuned.
         """
         self.__url_docs()
-        self.__feedback_docs()
+        #self.__feedback_docs()
 
       
 if __name__ == "__main__":

@@ -1,6 +1,0 @@
-Previewing the Scene 
-Click on the Projects tab in the navigation bar.
-Switch to the Scenes tab in the top right corner.
-Create a new scene or open an existing scene.
-Click on the Hide UI button in the top right corner to hide the user interface.
-Click on the Show UI button in the top right corner to display the user interface again.

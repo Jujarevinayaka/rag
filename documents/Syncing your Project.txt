@@ -1,5 +1,0 @@
-Syncing your Project
-Click on the Projects tab in the navigation bar.
-Click on the Scenes button in the top right corner to switch the view.
-Create a new scene or open an existing scene.
-Click on the Sync Now button in the top right corner to synchronize your project.

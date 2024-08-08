@@ -1,0 +1,14 @@
+How to Sign in to Ctruh
+You have two options to log in:
+Using your email ID and password
+Using social logins
+Using Email ID and Password:
+If you choose to sign in using your email ID and password, follow these steps:
+Enter your email ID in the designated field
+Input your password
+Click on the 'Sign In' button
+Using Social Logins:
+If you prefer to sign in using social logins, such as Google, follow these steps:
+Select the account associated with the email you wish to use for sign-in
+Proceed with Google, Facebook, Github, and LinkedIn sign-in
+By following these steps, you will be able to successfully sign in to True. Enjoy your experience!

@@ -1,0 +1,14 @@
+Directional Light
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the navigation bar.
+Click on the Scenes button in the pop-up.
+Create a new scene or open an existing project.
+Click on the Add button in the Editor toolbar.
+Select the Directional Light option from the Light Source drop-down menu.
+Click on the Attributes tab in the Direction Light Properties panel.
+Choose a color from the Color Picker for the Direction Light.
+Adjust the intensity of the Direction Light using the slider in the Properties panel.
+Turn on the Shadows toggle to enable shadows for the objects.
+Increase the opacity of the Direction Lights using the slider in the Properties panel.
+Increase or decrease the blur of the Direction Light's shadows using the slider in the Properties panel.
+Adjust the opacity of the Direction Light's shadows using the slider in the Properties panel.

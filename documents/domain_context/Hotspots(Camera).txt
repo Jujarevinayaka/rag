@@ -1,0 +1,10 @@
+Hotspots(Camera)
+Click on the Dashboard button in the navigation bar.
+Select the Projects tab in the navigation bar.
+Click on the Scenes button in the top right corner.
+Open the project or create a new scene.
+Click on the Add button in the Editor's toolbar to add new assets or elements to your scene.
+Select the Camera option from the Objects list in the sidebar.
+Toggle the Preview switch in the Camera Settings panel to view the preview.
+Adjust the field of view slider in the Camera Settings panel to the desired value.
+You can lock the focus of the camera to an object by selecting the object from the Focus Target drop-down.

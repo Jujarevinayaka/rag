@@ -1,6 +1,0 @@
-How to Create a New Scene
-Click on the Dashboard button in the navigation bar.
-Click on the Projects
-Select the Scenes tab from the menu.
-Click on the Create Scene button to start a new project.
-Create a new scene at the same spot as the one at the primary shot.

@@ -1,0 +1,4 @@
+Sign up using Social accounts
+Ctruh allows you to sign up using various social accounts such as Google, Facebook, GitHub, and LinkedIn.
+Click on the Google icon on the Ctruh sign-up page to create a new account.
+Select your Google account from the list of options to sign in with Google.

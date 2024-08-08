@@ -1,0 +1,9 @@
+Adding uploaded Assets to the Scene
+Click on the Dashboard button in the navigation bar.
+Click on the Projects tab in the navigation bar.
+Click on the Scenes button in the top right corner.
+Create a new scene or open an existing scene.
+Click on the Assets button in the navigation bar.
+Select the Uploads tab in the asset library.
+Click on the uploaded file from the uploads list.
+Press the Load Scene button to load the selected scene.
