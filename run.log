@@ -1,0 +1,439 @@
+2024-08-09 21:24:31 DEBUG    Creating folder <C:\<path to docs>/documents/> to store documents
+2024-08-09 21:24:31 DEBUG    Creating folder <C:\<path to docs>/documents//domain_context/> to store context specific documents
+2024-08-09 21:24:31 DEBUG    Creating folder <C:\<path to docs>/documents//sample_feedback/> to store feedback-response specific documents
+2024-08-09 21:24:31 DEBUG    Main Documents dir - C:\<path to docs>/documents/
+2024-08-09 21:24:31 DEBUG    Domain context documents dir - C:\<path to docs>/documents//domain_context/
+2024-08-09 21:24:31 DEBUG    Feedback-response documents dir - C:\<path to docs>/documents//sample_feedback/
+2024-08-09 21:24:31 DEBUG    Custom Feedback-response document file - C:\<path to docs>/documents//sample_feedback/custom_feedback.txt
+2024-08-09 21:24:31 INFO     Picked up URL - https://ctruhtech.notion.site/Scheduling-a-Demo-9e1166c8d24246eb80ef3efcdaaf07b6?pvs=25
+2024-08-09 21:24:31 INFO     ====== WebDriver manager ======
+2024-08-09 21:24:31 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:24:31 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:31 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:24:31 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:24:31 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:31 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:24:31 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:24:31 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:24:31 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 16584 using 0 to output -3
+2024-08-09 21:24:32 DEBUG    POST http://localhost:51145/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:24:32 DEBUG    Starting new HTTP connection (1): localhost:51145
+2024-08-09 21:24:32 DEBUG    http://localhost:51145 "POST /session HTTP/11" 200 0
+2024-08-09 21:24:32 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51149"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir16584_212057776"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"4e60dc1a6223092d5c2aa4c981c4d503"}} | headers=HTTPHeaderDict({'Content-Length': '853', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:32 DEBUG    Finished Request
+2024-08-09 21:24:32 DEBUG    Opening the URL - https://ctruhtech.notion.site/Scheduling-a-Demo-9e1166c8d24246eb80ef3efcdaaf07b6?pvs=25
+2024-08-09 21:24:32 DEBUG    POST http://localhost:51145/session/4e60dc1a6223092d5c2aa4c981c4d503/url {'url': 'https://ctruhtech.notion.site/Scheduling-a-Demo-9e1166c8d24246eb80ef3efcdaaf07b6?pvs=25'}
+2024-08-09 21:24:33 DEBUG    http://localhost:51145 "POST /session/4e60dc1a6223092d5c2aa4c981c4d503/url HTTP/11" 200 0
+2024-08-09 21:24:33 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:33 DEBUG    Finished Request
+2024-08-09 21:24:33 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:24:38 DEBUG    POST http://localhost:51145/session/4e60dc1a6223092d5c2aa4c981c4d503/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:24:38 DEBUG    http://localhost:51145 "POST /session/4e60dc1a6223092d5c2aa4c981c4d503/element HTTP/11" 200 0
+2024-08-09 21:24:38 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.F37B23320B1700C371ACE1409912E9CE.d.64BD3AB19A86130C218792EF72246456.e.9"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:38 DEBUG    Finished Request
+2024-08-09 21:24:38 DEBUG    GET http://localhost:51145/session/4e60dc1a6223092d5c2aa4c981c4d503/element/f.F37B23320B1700C371ACE1409912E9CE.d.64BD3AB19A86130C218792EF72246456.e.9/text {}
+2024-08-09 21:24:38 DEBUG    http://localhost:51145 "GET /session/4e60dc1a6223092d5c2aa4c981c4d503/element/f.F37B23320B1700C371ACE1409912E9CE.d.64BD3AB19A86130C218792EF72246456.e.9/text HTTP/11" 200 0
+2024-08-09 21:24:38 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nScheduling a Demo\nBuilt with\nScheduling a Demo\nClick on the Book a Demo button in the main content area.\nClick on the Book a Call button.\nSelect the date for the demo call by clicking on the date in the calendar based on your availability.\nPick a comfortable time.\nClick on Next.\nAdd your details such as name, email, and a brief agenda for the meeting.\nEnter your phone number to receive text messages.\nClick the Schedule Event button to proceed with scheduling the event."} | headers=HTTPHeaderDict({'Content-Length': '515', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:38 DEBUG    Finished Request
+2024-08-09 21:24:38 DEBUG    DELETE http://localhost:51145/session/4e60dc1a6223092d5c2aa4c981c4d503 {}
+2024-08-09 21:24:38 DEBUG    http://localhost:51145 "DELETE /session/4e60dc1a6223092d5c2aa4c981c4d503 HTTP/11" 200 0
+2024-08-09 21:24:38 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:38 DEBUG    Finished Request
+2024-08-09 21:24:41 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/Scheduling-a-Demo-9e1166c8d24246eb80ef3efcdaaf07b6?pvs=25
+2024-08-09 21:24:45 INFO     Done creating document - Scheduling a Demo.txt
+2024-08-09 21:24:45 INFO     Picked up URL - https://ctruhtech.notion.site/Dashboard-Overview-8f3bc3ac26cd4a0096d53931945155dd?pvs=25
+2024-08-09 21:24:45 INFO     ====== WebDriver manager ======
+2024-08-09 21:24:45 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:24:45 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:45 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:24:45 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:24:45 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:45 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:24:45 INFO     There is no [win64] edgedriver "127.0.2651.86" for browser edge "127.0.2651" in cache
+2024-08-09 21:24:45 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:24:45 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:46 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:24:46 INFO     About to download new driver from https://msedgedriver.azureedge.net/127.0.2651.86/edgedriver_win64.zip
+2024-08-09 21:24:46 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:46 DEBUG    https://msedgedriver.azureedge.net:443 "GET /127.0.2651.86/edgedriver_win64.zip HTTP/11" 200 9571218
+2024-08-09 21:24:46 INFO     Driver downloading response is 200
+2024-08-09 21:24:53 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:24:53 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:24:53 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:24:53 INFO     Driver has been saved in cache [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86]
+2024-08-09 21:24:53 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:24:53 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 30936 using 0 to output -3
+2024-08-09 21:24:54 DEBUG    POST http://localhost:51204/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:24:54 DEBUG    Starting new HTTP connection (1): localhost:51204
+2024-08-09 21:24:54 DEBUG    http://localhost:51204 "POST /session HTTP/11" 200 0
+2024-08-09 21:24:54 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51207"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir30936_396452513"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"1a9fa163f23e396dfb2ada13a40b6a87"}} | headers=HTTPHeaderDict({'Content-Length': '853', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:54 DEBUG    Finished Request
+2024-08-09 21:24:54 DEBUG    Opening the URL - https://ctruhtech.notion.site/Dashboard-Overview-8f3bc3ac26cd4a0096d53931945155dd?pvs=25
+2024-08-09 21:24:54 DEBUG    POST http://localhost:51204/session/1a9fa163f23e396dfb2ada13a40b6a87/url {'url': 'https://ctruhtech.notion.site/Dashboard-Overview-8f3bc3ac26cd4a0096d53931945155dd?pvs=25'}
+2024-08-09 21:24:55 DEBUG    http://localhost:51204 "POST /session/1a9fa163f23e396dfb2ada13a40b6a87/url HTTP/11" 200 0
+2024-08-09 21:24:55 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:24:55 DEBUG    Finished Request
+2024-08-09 21:24:55 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:25:00 DEBUG    POST http://localhost:51204/session/1a9fa163f23e396dfb2ada13a40b6a87/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:25:00 DEBUG    http://localhost:51204 "POST /session/1a9fa163f23e396dfb2ada13a40b6a87/element HTTP/11" 200 0
+2024-08-09 21:25:00 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.9D15494E288745DE4842463E9DDAF4DF.d.9072A86AEB597BEDCB6D89BB8B7FE711.e.9"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:00 DEBUG    Finished Request
+2024-08-09 21:25:00 DEBUG    GET http://localhost:51204/session/1a9fa163f23e396dfb2ada13a40b6a87/element/f.9D15494E288745DE4842463E9DDAF4DF.d.9072A86AEB597BEDCB6D89BB8B7FE711.e.9/text {}
+2024-08-09 21:25:00 DEBUG    http://localhost:51204 "GET /session/1a9fa163f23e396dfb2ada13a40b6a87/element/f.9D15494E288745DE4842463E9DDAF4DF.d.9072A86AEB597BEDCB6D89BB8B7FE711.e.9/text HTTP/11" 200 0
+2024-08-09 21:25:00 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nDashboard Overview\nBuilt with\nDashboard Overview\nHow to Navigate and Manage Projects in the Dashboard\nClick on the Dashboard button in the navigation bar to access the dashboard.\nIn the Home section, you can find all the templates of the 3D editor. Click on a template to get started.\nSwitch to the Application tab to choose application templates and begin your project.\nGo to the Projects tab in the navigation bar to view your projects. You can create a new storefront or open an existing virtual storefront.\nClick on the Scenes tab in the navigation bar to access editor projects. You can create a new editor project or open an existing scene.\nManaging Account Settings and Logging Out\nClick on the Account Settings to modify your account details.\nClick on Back to Dashboard to return to the dashboard.\nFinally, click on the Logout button in the navigation bar to exit your account."} | headers=HTTPHeaderDict({'Content-Length': '929', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:00 DEBUG    Finished Request
+2024-08-09 21:25:00 DEBUG    DELETE http://localhost:51204/session/1a9fa163f23e396dfb2ada13a40b6a87 {}
+2024-08-09 21:25:00 DEBUG    http://localhost:51204 "DELETE /session/1a9fa163f23e396dfb2ada13a40b6a87 HTTP/11" 200 0
+2024-08-09 21:25:00 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:00 DEBUG    Finished Request
+2024-08-09 21:25:02 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/Dashboard-Overview-8f3bc3ac26cd4a0096d53931945155dd?pvs=25
+2024-08-09 21:25:07 INFO     Done creating document - Dashboard Overview.txt
+2024-08-09 21:25:07 INFO     Picked up URL - https://ctruhtech.notion.site/How-to-Sign-in-to-Ctruh-6b1a546dda96499ba6f2ff95d4ef4ab1?pvs=25
+2024-08-09 21:25:07 INFO     ====== WebDriver manager ======
+2024-08-09 21:25:07 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:07 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:07 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:07 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:07 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:07 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:07 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:25:07 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:25:07 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 46220 using 0 to output -3
+2024-08-09 21:25:08 DEBUG    POST http://localhost:51259/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:25:08 DEBUG    Starting new HTTP connection (1): localhost:51259
+2024-08-09 21:25:08 DEBUG    http://localhost:51259 "POST /session HTTP/11" 200 0
+2024-08-09 21:25:08 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51262"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir46220_1125058961"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"36ba5f7bea385892a878aac67521ea47"}} | headers=HTTPHeaderDict({'Content-Length': '854', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:08 DEBUG    Finished Request
+2024-08-09 21:25:08 DEBUG    Opening the URL - https://ctruhtech.notion.site/How-to-Sign-in-to-Ctruh-6b1a546dda96499ba6f2ff95d4ef4ab1?pvs=25
+2024-08-09 21:25:08 DEBUG    POST http://localhost:51259/session/36ba5f7bea385892a878aac67521ea47/url {'url': 'https://ctruhtech.notion.site/How-to-Sign-in-to-Ctruh-6b1a546dda96499ba6f2ff95d4ef4ab1?pvs=25'}
+2024-08-09 21:25:09 DEBUG    http://localhost:51259 "POST /session/36ba5f7bea385892a878aac67521ea47/url HTTP/11" 200 0
+2024-08-09 21:25:09 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:09 DEBUG    Finished Request
+2024-08-09 21:25:09 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:25:14 DEBUG    POST http://localhost:51259/session/36ba5f7bea385892a878aac67521ea47/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:25:14 DEBUG    http://localhost:51259 "POST /session/36ba5f7bea385892a878aac67521ea47/element HTTP/11" 200 0
+2024-08-09 21:25:14 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.2BE0CB61C366761F2899E2E5CC1FC97B.d.B39E8A90AF36E6B754C330FAC7C23929.e.10"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:14 DEBUG    Finished Request
+2024-08-09 21:25:14 DEBUG    GET http://localhost:51259/session/36ba5f7bea385892a878aac67521ea47/element/f.2BE0CB61C366761F2899E2E5CC1FC97B.d.B39E8A90AF36E6B754C330FAC7C23929.e.10/text {}
+2024-08-09 21:25:14 DEBUG    http://localhost:51259 "GET /session/36ba5f7bea385892a878aac67521ea47/element/f.2BE0CB61C366761F2899E2E5CC1FC97B.d.B39E8A90AF36E6B754C330FAC7C23929.e.10/text HTTP/11" 200 0
+2024-08-09 21:25:14 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nHow to Sign in to Ctruh\nBuilt with\nHow to Sign in to Ctruh\nYou have two options to log in:\nUsing your email ID and password\nUsing social logins\nUsing Email ID and Password:\nIf you choose to sign in using your email ID and password, follow these steps:\nEnter your email ID in the designated field\nInput your password\nClick on the 'Sign In' button\nUsing Social Logins:\nIf you prefer to sign in using social logins, such as Google, follow these steps:\nSelect the account associated with the email you wish to use for sign-in\nProceed with Google, Facebook, Github, and LinkedIn sign-in\nBy following these steps, you will be able to successfully sign in to True. Enjoy your experience!"} | headers=HTTPHeaderDict({'Content-Length': '727', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:14 DEBUG    Finished Request
+2024-08-09 21:25:14 DEBUG    DELETE http://localhost:51259/session/36ba5f7bea385892a878aac67521ea47 {}
+2024-08-09 21:25:14 DEBUG    http://localhost:51259 "DELETE /session/36ba5f7bea385892a878aac67521ea47 HTTP/11" 200 0
+2024-08-09 21:25:14 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:14 DEBUG    Finished Request
+2024-08-09 21:25:16 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/How-to-Sign-in-to-Ctruh-6b1a546dda96499ba6f2ff95d4ef4ab1?pvs=25
+2024-08-09 21:25:20 INFO     Done creating document - How to Sign in to Ctruh.txt
+2024-08-09 21:25:20 INFO     Picked up URL - https://ctruhtech.notion.site/Sign-up-using-your-Email-ID-and-Phone-number-bcbad713817f4ed2bd186483a6c08474?pvs=25
+2024-08-09 21:25:20 INFO     ====== WebDriver manager ======
+2024-08-09 21:25:21 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:21 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:21 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:21 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:21 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:21 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:21 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:25:21 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:25:21 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 8412 using 0 to output -3
+2024-08-09 21:25:22 DEBUG    POST http://localhost:51310/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:25:22 DEBUG    Starting new HTTP connection (1): localhost:51310
+2024-08-09 21:25:22 DEBUG    http://localhost:51310 "POST /session HTTP/11" 200 0
+2024-08-09 21:25:22 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51313"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir8412_853312909"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"d0e4d8f8640b6dba7fc75d518a4e50b4"}} | headers=HTTPHeaderDict({'Content-Length': '852', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:22 DEBUG    Finished Request
+2024-08-09 21:25:22 DEBUG    Opening the URL - https://ctruhtech.notion.site/Sign-up-using-your-Email-ID-and-Phone-number-bcbad713817f4ed2bd186483a6c08474?pvs=25
+2024-08-09 21:25:22 DEBUG    POST http://localhost:51310/session/d0e4d8f8640b6dba7fc75d518a4e50b4/url {'url': 'https://ctruhtech.notion.site/Sign-up-using-your-Email-ID-and-Phone-number-bcbad713817f4ed2bd186483a...'}
+2024-08-09 21:25:23 DEBUG    http://localhost:51310 "POST /session/d0e4d8f8640b6dba7fc75d518a4e50b4/url HTTP/11" 200 0
+2024-08-09 21:25:23 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:23 DEBUG    Finished Request
+2024-08-09 21:25:23 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:25:28 DEBUG    POST http://localhost:51310/session/d0e4d8f8640b6dba7fc75d518a4e50b4/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:25:28 DEBUG    http://localhost:51310 "POST /session/d0e4d8f8640b6dba7fc75d518a4e50b4/element HTTP/11" 200 0
+2024-08-09 21:25:28 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.C7F81B448AC1D249259202B79AE86BCB.d.3883A42F53A86F9B10DB3ECB15B57D95.e.10"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:28 DEBUG    Finished Request
+2024-08-09 21:25:28 DEBUG    GET http://localhost:51310/session/d0e4d8f8640b6dba7fc75d518a4e50b4/element/f.C7F81B448AC1D249259202B79AE86BCB.d.3883A42F53A86F9B10DB3ECB15B57D95.e.10/text {}
+2024-08-09 21:25:28 DEBUG    http://localhost:51310 "GET /session/d0e4d8f8640b6dba7fc75d518a4e50b4/element/f.C7F81B448AC1D249259202B79AE86BCB.d.3883A42F53A86F9B10DB3ECB15B57D95.e.10/text HTTP/11" 200 0
+2024-08-09 21:25:28 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nSign up using your Email ID and Phone number\nBuilt with\nSign up using your Email ID and Phone number\nClick on the \"Sign Up\" button in the navigation bar.\nClick on the \"Sign Up Manually\" button.\nEnter your name in the text field.\nEnter your email address in the text field.\nEnter your password in the designated field.\nEnter your mobile number in the highlighted field on the form.\nVerify the CAPTCHA.\nClick the \"Continue\" button to proceed.\nEnter the OTP sent to your mobile number in the highlighted fields.\nClick the \"Verify\" button to proceed with the OTP verification."} | headers=HTTPHeaderDict({'Content-Length': '624', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:28 DEBUG    Finished Request
+2024-08-09 21:25:28 DEBUG    DELETE http://localhost:51310/session/d0e4d8f8640b6dba7fc75d518a4e50b4 {}
+2024-08-09 21:25:28 DEBUG    http://localhost:51310 "DELETE /session/d0e4d8f8640b6dba7fc75d518a4e50b4 HTTP/11" 200 0
+2024-08-09 21:25:28 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:28 DEBUG    Finished Request
+2024-08-09 21:25:30 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/Sign-up-using-your-Email-ID-and-Phone-number-bcbad713817f4ed2bd186483a6c08474?pvs=25
+2024-08-09 21:25:35 INFO     Done creating document - Sign up using your Email ID and Phone number.txt
+2024-08-09 21:25:35 INFO     Picked up URL - https://ctruhtech.notion.site/Sign-up-using-Social-accounts-da9040ac7a2342ff98b7488857e8cb98?pvs=25
+2024-08-09 21:25:35 INFO     ====== WebDriver manager ======
+2024-08-09 21:25:35 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:35 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:35 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:35 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:35 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:35 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:35 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:25:35 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:25:35 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 74864 using 0 to output -3
+2024-08-09 21:25:36 DEBUG    POST http://localhost:51366/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:25:36 DEBUG    Starting new HTTP connection (1): localhost:51366
+2024-08-09 21:25:36 DEBUG    http://localhost:51366 "POST /session HTTP/11" 200 0
+2024-08-09 21:25:36 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51369"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir74864_1446705101"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"1aae13adef63a4c1d15639f4c022ab00"}} | headers=HTTPHeaderDict({'Content-Length': '854', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:36 DEBUG    Finished Request
+2024-08-09 21:25:36 DEBUG    Opening the URL - https://ctruhtech.notion.site/Sign-up-using-Social-accounts-da9040ac7a2342ff98b7488857e8cb98?pvs=25
+2024-08-09 21:25:36 DEBUG    POST http://localhost:51366/session/1aae13adef63a4c1d15639f4c022ab00/url {'url': 'https://ctruhtech.notion.site/Sign-up-using-Social-accounts-da9040ac7a2342ff98b7488857e8cb98?pvs=25'}
+2024-08-09 21:25:37 DEBUG    http://localhost:51366 "POST /session/1aae13adef63a4c1d15639f4c022ab00/url HTTP/11" 200 0
+2024-08-09 21:25:37 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:37 DEBUG    Finished Request
+2024-08-09 21:25:37 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:25:42 DEBUG    POST http://localhost:51366/session/1aae13adef63a4c1d15639f4c022ab00/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:25:42 DEBUG    http://localhost:51366 "POST /session/1aae13adef63a4c1d15639f4c022ab00/element HTTP/11" 200 0
+2024-08-09 21:25:42 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.A655F0B991568AB777754FD9E799D64D.d.5A6B18D76A17A6A2EB50D6C40C73FCEE.e.9"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:42 DEBUG    Finished Request
+2024-08-09 21:25:42 DEBUG    GET http://localhost:51366/session/1aae13adef63a4c1d15639f4c022ab00/element/f.A655F0B991568AB777754FD9E799D64D.d.5A6B18D76A17A6A2EB50D6C40C73FCEE.e.9/text {}
+2024-08-09 21:25:42 DEBUG    http://localhost:51366 "GET /session/1aae13adef63a4c1d15639f4c022ab00/element/f.A655F0B991568AB777754FD9E799D64D.d.5A6B18D76A17A6A2EB50D6C40C73FCEE.e.9/text HTTP/11" 200 0
+2024-08-09 21:25:42 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nSign up using Social accounts\nBuilt with\nSign up using Social accounts\nCtruh allows you to sign up using various social accounts such as Google, Facebook, GitHub, and LinkedIn.\nClick on the Google icon on the Ctruh sign-up page to create a new account.\nSelect your Google account from the list of options to sign in with Google."} | headers=HTTPHeaderDict({'Content-Length': '365', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:42 DEBUG    Finished Request
+2024-08-09 21:25:42 DEBUG    DELETE http://localhost:51366/session/1aae13adef63a4c1d15639f4c022ab00 {}
+2024-08-09 21:25:42 DEBUG    http://localhost:51366 "DELETE /session/1aae13adef63a4c1d15639f4c022ab00 HTTP/11" 200 0
+2024-08-09 21:25:42 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:42 DEBUG    Finished Request
+2024-08-09 21:25:44 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/Sign-up-using-Social-accounts-da9040ac7a2342ff98b7488857e8cb98?pvs=25
+2024-08-09 21:25:48 INFO     Done creating document - Sign up using Social accounts.txt
+2024-08-09 21:25:48 INFO     Picked up URL - https://ctruhtech.notion.site/How-to-Create-a-New-Scene-b99d01067d704beaaaee7bd3776fdb5e?pvs=25
+2024-08-09 21:25:48 INFO     ====== WebDriver manager ======
+2024-08-09 21:25:49 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:49 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:49 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:49 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:25:49 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:25:49 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:25:49 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:25:49 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:25:49 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 19320 using 0 to output -3
+2024-08-09 21:25:50 DEBUG    POST http://localhost:51417/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:25:50 DEBUG    Starting new HTTP connection (1): localhost:51417
+2024-08-09 21:25:50 DEBUG    http://localhost:51417 "POST /session HTTP/11" 200 0
+2024-08-09 21:25:50 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51420"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir19320_2033619208"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"982e120967d55201440e0cbc5acc3640"}} | headers=HTTPHeaderDict({'Content-Length': '854', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:50 DEBUG    Finished Request
+2024-08-09 21:25:50 DEBUG    Opening the URL - https://ctruhtech.notion.site/How-to-Create-a-New-Scene-b99d01067d704beaaaee7bd3776fdb5e?pvs=25
+2024-08-09 21:25:50 DEBUG    POST http://localhost:51417/session/982e120967d55201440e0cbc5acc3640/url {'url': 'https://ctruhtech.notion.site/How-to-Create-a-New-Scene-b99d01067d704beaaaee7bd3776fdb5e?pvs=25'}
+2024-08-09 21:25:51 DEBUG    http://localhost:51417 "POST /session/982e120967d55201440e0cbc5acc3640/url HTTP/11" 200 0
+2024-08-09 21:25:51 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:51 DEBUG    Finished Request
+2024-08-09 21:25:51 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:25:56 DEBUG    POST http://localhost:51417/session/982e120967d55201440e0cbc5acc3640/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:25:56 DEBUG    http://localhost:51417 "POST /session/982e120967d55201440e0cbc5acc3640/element HTTP/11" 200 0
+2024-08-09 21:25:56 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.427EA3E1D604FB53E76F48BE76DD7A81.d.1E83E7EFEE192477FE550D0EAC14B905.e.10"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:56 DEBUG    Finished Request
+2024-08-09 21:25:56 DEBUG    GET http://localhost:51417/session/982e120967d55201440e0cbc5acc3640/element/f.427EA3E1D604FB53E76F48BE76DD7A81.d.1E83E7EFEE192477FE550D0EAC14B905.e.10/text {}
+2024-08-09 21:25:56 DEBUG    http://localhost:51417 "GET /session/982e120967d55201440e0cbc5acc3640/element/f.427EA3E1D604FB53E76F48BE76DD7A81.d.1E83E7EFEE192477FE550D0EAC14B905.e.10/text HTTP/11" 200 0
+2024-08-09 21:25:56 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nHow to Create a New Scene\nBuilt with\nHow to Create a New Scene\nClick on the Dashboard button in the navigation bar.\nClick on the Projects\nSelect the Scenes tab from the menu.\nClick on the Create Scene button to start a new project.\nCreate a new scene at the same spot as the one at the primary shot."} | headers=HTTPHeaderDict({'Content-Length': '338', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:56 DEBUG    Finished Request
+2024-08-09 21:25:56 DEBUG    DELETE http://localhost:51417/session/982e120967d55201440e0cbc5acc3640 {}
+2024-08-09 21:25:56 DEBUG    http://localhost:51417 "DELETE /session/982e120967d55201440e0cbc5acc3640 HTTP/11" 200 0
+2024-08-09 21:25:56 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:25:56 DEBUG    Finished Request
+2024-08-09 21:25:58 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/How-to-Create-a-New-Scene-b99d01067d704beaaaee7bd3776fdb5e?pvs=25
+2024-08-09 21:26:02 INFO     Done creating document - How to Create a New Scene.txt
+2024-08-09 21:26:02 INFO     Picked up URL - https://ctruhtech.notion.site/Customising-Ctruh-Editor-1ea5824d93f24e4dbae90cb846b5a8e8?pvs=25
+2024-08-09 21:26:02 INFO     ====== WebDriver manager ======
+2024-08-09 21:26:03 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:26:03 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:26:03 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:26:03 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:26:03 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:26:03 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:26:03 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:26:03 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:26:03 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 16232 using 0 to output -3
+2024-08-09 21:26:03 DEBUG    POST http://localhost:51470/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:26:03 DEBUG    Starting new HTTP connection (1): localhost:51470
+2024-08-09 21:26:04 DEBUG    http://localhost:51470 "POST /session HTTP/11" 200 0
+2024-08-09 21:26:04 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51473"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir16232_697752384"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"8cefbff2680e94288babf0d096a7fb8f"}} | headers=HTTPHeaderDict({'Content-Length': '853', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:04 DEBUG    Finished Request
+2024-08-09 21:26:04 DEBUG    Opening the URL - https://ctruhtech.notion.site/Customising-Ctruh-Editor-1ea5824d93f24e4dbae90cb846b5a8e8?pvs=25
+2024-08-09 21:26:04 DEBUG    POST http://localhost:51470/session/8cefbff2680e94288babf0d096a7fb8f/url {'url': 'https://ctruhtech.notion.site/Customising-Ctruh-Editor-1ea5824d93f24e4dbae90cb846b5a8e8?pvs=25'}
+2024-08-09 21:26:05 DEBUG    http://localhost:51470 "POST /session/8cefbff2680e94288babf0d096a7fb8f/url HTTP/11" 200 0
+2024-08-09 21:26:05 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:05 DEBUG    Finished Request
+2024-08-09 21:26:05 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:26:10 DEBUG    POST http://localhost:51470/session/8cefbff2680e94288babf0d096a7fb8f/element {'using': 'tag name', 'value': 'body'}
+2024-08-09 21:26:10 DEBUG    http://localhost:51470 "POST /session/8cefbff2680e94288babf0d096a7fb8f/element HTTP/11" 200 0
+2024-08-09 21:26:10 DEBUG    Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.0B08E8871A551B075FCE81D3F0FBAE8D.d.5EF54BAED56103266AD3BF3F605C8B65.e.10"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:10 DEBUG    Finished Request
+2024-08-09 21:26:10 DEBUG    GET http://localhost:51470/session/8cefbff2680e94288babf0d096a7fb8f/element/f.0B08E8871A551B075FCE81D3F0FBAE8D.d.5EF54BAED56103266AD3BF3F605C8B65.e.10/text {}
+2024-08-09 21:26:10 DEBUG    http://localhost:51470 "GET /session/8cefbff2680e94288babf0d096a7fb8f/element/f.0B08E8871A551B075FCE81D3F0FBAE8D.d.5EF54BAED56103266AD3BF3F605C8B65.e.10/text HTTP/11" 200 0
+2024-08-09 21:26:10 DEBUG    Remote response: status=200 | data={"value":"Ctruh Resources\n/\nCustomising Ctruh Editor\nBuilt with\nCustomising Ctruh Editor\n1. Accessing the Dashboard\nClick on the Dashboard button in the navigation bar.\n2. Navigating to Projects\nSelect the Projects tab at the top of the page.\n3. Managing Scenes\nClick on the Scenes button in the top right corner.\nCreate a new scene or open an existing scene.\n4. Customizing Scene Preferences\nClick on Scene Preference to access customization options.\nAdjust the background color by clicking on Background Color.\nChange the grid color by clicking on the grid.\nModify the ambient light intensity using the slider in the Scene Preference panel.\n5. Adding Background Audio\nClick on the folder icon to select a background audio for the scene.\nSelect the desired audio file, such as Athena, from the Sound Library.\nPlay, pause, or reset the background audio using the options in the Scene Preference panel.\n6. Audio Settings\nUtilize the Loop option to loop the background audio.\nAdjust the volume slider to control the audio volume in the Scene Preference panel.\nBy following these steps, you can effectively customize True Editor to suit your editing needs and preferences."} | headers=HTTPHeaderDict({'Content-Length': '1195', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:10 DEBUG    Finished Request
+2024-08-09 21:26:10 DEBUG    DELETE http://localhost:51470/session/8cefbff2680e94288babf0d096a7fb8f {}
+2024-08-09 21:26:10 DEBUG    http://localhost:51470 "DELETE /session/8cefbff2680e94288babf0d096a7fb8f HTTP/11" 200 0
+2024-08-09 21:26:10 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:10 DEBUG    Finished Request
+2024-08-09 21:26:12 DEBUG    Done parsing the URL - https://ctruhtech.notion.site/Customising-Ctruh-Editor-1ea5824d93f24e4dbae90cb846b5a8e8?pvs=25
+2024-08-09 21:26:16 INFO     Done creating document - Customising Ctruh Editor.txt
+2024-08-09 21:26:16 INFO     Picked up URL - https://ctruhtech.notion.site/Previewing-the-Scene-9759d53b4fe44963a6c0c5271f35ee90?pvs=25
+2024-08-09 21:26:16 INFO     ====== WebDriver manager ======
+2024-08-09 21:26:16 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:26:16 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:26:17 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:26:17 INFO     Get LATEST edgedriver version for Edge 127.0.2651
+2024-08-09 21:26:17 DEBUG    Starting new HTTPS connection (1): msedgedriver.azureedge.net:443
+2024-08-09 21:26:17 DEBUG    https://msedgedriver.azureedge.net:443 "GET /LATEST_RELEASE_127_WINDOWS HTTP/11" 200 32
+2024-08-09 21:26:17 INFO     Driver [C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe] found in cache
+2024-08-09 21:26:17 DEBUG    Skipping Selenium Manager; path to MicrosoftEdge driver specified in Service class: C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe
+2024-08-09 21:26:17 DEBUG    Started executable: `C:\Users\****\.wdm\drivers\edgedriver\win64\127.0.2651.86\msedgedriver.exe` in a child process with pid: 71032 using 0 to output -3
+2024-08-09 21:26:17 DEBUG    POST http://localhost:51525/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'MicrosoftEdge', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'ms:edgeOptions': {'extensions': [], 'args': []}}}}
+2024-08-09 21:26:17 DEBUG    Starting new HTTP connection (1): localhost:51525
+2024-08-09 21:26:18 DEBUG    http://localhost:51525 "POST /session HTTP/11" 200 0
+2024-08-09 21:26:18 DEBUG    Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"MicrosoftEdge","browserVersion":"127.0.2651.74","fedcm:accounts":true,"ms:edgeOptions":{"debuggerAddress":"localhost:51528"},"msedge":{"msedgedriverVersion":"127.0.2651.86 (ac31d8b8296916cd30e022450164e1cd578ef699)","userDataDir":"C:\\Users\\****\\AppData\\Local\\Temp\\scoped_dir71032_1087458661"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"af4f86aa6c2f23d14fb74eef1b6b176c"}} | headers=HTTPHeaderDict({'Content-Length': '854', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:18 DEBUG    Finished Request
+2024-08-09 21:26:18 DEBUG    Opening the URL - https://ctruhtech.notion.site/Previewing-the-Scene-9759d53b4fe44963a6c0c5271f35ee90?pvs=25
+2024-08-09 21:26:18 DEBUG    POST http://localhost:51525/session/af4f86aa6c2f23d14fb74eef1b6b176c/url {'url': 'https://ctruhtech.notion.site/Previewing-the-Scene-9759d53b4fe44963a6c0c5271f35ee90?pvs=25'}
+2024-08-09 21:26:18 DEBUG    http://localhost:51525 "POST /session/af4f86aa6c2f23d14fb74eef1b6b176c/url HTTP/11" 200 0
+2024-08-09 21:26:18 DEBUG    Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-09 21:26:18 DEBUG    Finished Request
+2024-08-09 21:26:18 DEBUG    Waiting for 5sec for the URL to load
+2024-08-09 21:30:49 DEBUG    Starting new HTTPS connection (1): packages.unstructured.io:443
+2024-08-09 21:30:49 DEBUG    https://packages.unstructured.io:443 "GET /python-telemetry?version=0.15.0&platform=Windows&python3.9&arch=AMD64&gpu=True&dev=false HTTP/11" 302 None
+2024-08-09 21:30:49 DEBUG    Starting new HTTPS connection (1): unstructured.io:443
+2024-08-09 21:30:49 DEBUG    https://unstructured.io:443 "GET /?version=0.15.0&platform=Windows&python3.9&arch=AMD64&gpu=True&dev=false HTTP/11" 200 12055
+2024-08-09 21:30:50 INFO     Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-08-09 21:30:50 INFO     NumExpr defaulting to 8 threads.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Customising Ctruh Editor
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Customising Ctruh Editor
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Dashboard button in the navigation bar.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Scenes button in the top right corner.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on Scene Preference to access customization options.
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\domain_context\Dashboard Overview.txt
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 3 word tokens, it will not count toward sentence count.
+Dashboard Overview
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Dashboard Overview
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Dashboard Overview
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+How to Navigate and Manage Projects in the Dashboard
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Dashboard button in the navigation bar to access the dashboard.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Managing Account Settings and Logging Out
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\domain_context\How to Create a New Scene.txt
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+How to Create a New Scene
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Dashboard button in the navigation bar.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Projects
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Click on the Projects
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\domain_context\How to Sign in to Ctruh.txt
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Using Email ID and Password:
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Enter your email ID in the designated field
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Input your password
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Input your password
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the 'Sign In' button
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Using Social Logins:
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Using Social Logins
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Proceed with Google, Facebook, Github, and LinkedIn sign-in
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\domain_context\Scheduling a Demo.txt
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Scheduling a Demo
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Scheduling a Demo
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Book a Demo button in the main content area.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the Book a Call button.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Click on Next.
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Click on Next
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\domain_context\Sign up using Social accounts.txt
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\domain_context\Sign up using your Email ID and Phone number.txt
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Click on the "Sign Up" button in the navigation bar.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Click on the "Sign Up Manually" button.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Enter your name in the text field.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Enter your email address in the text field.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Enter your password in the designated field.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text does not contain a verb:
+
+Enter your mobile number in the highlighted field on the form.
+2024-08-09 21:30:51 DETAIL   Not narrative. Text exceeds cap ratio 0.5:
+
+Verify the CAPTCHA.
+2024-08-09 21:30:51 DETAIL   Sentence does not exceed 5 word tokens, it will not count toward sentence count.
+Verify the CAPTCHA
+2024-08-09 21:30:51 DEBUG    Processing file: C:\<path to docs>\documents\sample_feedback\custom_feedback.txt
+2024-08-09 21:30:51 DEBUG    Loaded all the files under C:\<path to docs>/documents/
+2024-08-09 21:30:51 DEBUG    Created embeddings for llama3.1
+2024-08-09 21:30:51 DEBUG    Split documents: 
+[Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\Customising Ctruh Editor.txt', 'start_index': 0}, page_content='Customising Ctruh Editor\n\n1. Accessing the Dashboard\n\nClick on the Dashboard button in the navigation bar.\n\n2. Navigating to Projects\n\nSelect the Projects tab at the top of the page.\n\n3. Managing Scenes\n\nClick on the Scenes button in the top right corner.\n\nCreate a new scene or open an existing scene.\n\n4. Customizing Scene Preferences\n\nClick on Scene Preference to access customization options.\n\nAdjust the background color by clicking on Background Color.\n\nChange the grid color by clicking on the grid.\n\nModify the ambient light intensity using the slider in the Scene Preference panel.\n\n5. Adding Background Audio\n\nClick on the folder icon to select a background audio for the scene.\n\nSelect the desired audio file, such as Athena, from the Sound Library.\n\nPlay, pause, or reset the background audio using the options in the Scene Preference panel.\n\n6. Audio Settings\n\nUtilize the Loop option to loop the background audio.\n\nAdjust the volume slider to control the audio volume in the Scene Preference panel.\n\nBy following these steps, you can effectively customize True Editor to suit your editing needs and preferences.'), Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\Dashboard Overview.txt', 'start_index': 0}, page_content='Dashboard Overview\n\nHow to Navigate and Manage Projects in the Dashboard\n\nClick on the Dashboard button in the navigation bar to access the dashboard.\n\nIn the Home section, you can find all the templates of the 3D editor. Click on a template to get started.\n\nSwitch to the Application tab to choose application templates and begin your project.\n\nGo to the Projects tab in the navigation bar to view your projects. You can create a new storefront or open an existing virtual storefront.\n\nClick on the Scenes tab in the navigation bar to access editor projects. You can create a new editor project or open an existing scene.\n\nManaging Account Settings and Logging Out\n\nClick on the Account Settings to modify your account details.\n\nClick on Back to Dashboard to return to the dashboard.\n\nFinally, click on the Logout button in the navigation bar to exit your account.'), Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\How to Create a New Scene.txt', 'start_index': 0}, page_content='How to Create a New Scene\n\nClick on the Dashboard button in the navigation bar.\n\nClick on the Projects\n\nSelect the Scenes tab from the menu.\n\nClick on the Create Scene button to start a new project.\n\nCreate a new scene at the same spot as the one at the primary shot.'), Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\How to Sign in to Ctruh.txt', 'start_index': 0}, page_content="How to Sign in to Ctruh\n\nYou have two options to log in:\n\nUsing your email ID and password\n\nUsing social logins\n\nUsing Email ID and Password:\n\nIf you choose to sign in using your email ID and password, follow these steps:\n\nEnter your email ID in the designated field\n\nInput your password\n\nClick on the 'Sign In' button\n\nUsing Social Logins:\n\nIf you prefer to sign in using social logins, such as Google, follow these steps:\n\nSelect the account associated with the email you wish to use for sign-in\n\nProceed with Google, Facebook, Github, and LinkedIn sign-in\n\nBy following these steps, you will be able to successfully sign in to True. Enjoy your experience!"), Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\Scheduling a Demo.txt', 'start_index': 0}, page_content='Scheduling a Demo\n\nClick on the Book a Demo button in the main content area.\n\nClick on the Book a Call button.\n\nSelect the date for the demo call by clicking on the date in the calendar based on your availability.\n\nPick a comfortable time.\n\nClick on Next.\n\nAdd your details such as name, email, and a brief agenda for the meeting.\n\nEnter your phone number to receive text messages.\n\nClick the Schedule Event button to proceed with scheduling the event.'), Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\Sign up using Social accounts.txt', 'start_index': 0}, page_content='Sign up using Social accounts\n\nCtruh allows you to sign up using various social accounts such as Google, Facebook, GitHub, and LinkedIn.\n\nClick on the Google icon on the Ctruh sign-up page to create a new account.\n\nSelect your Google account from the list of options to sign in with Google.'), Document(metadata={'source': 'C:\<path to docs>\documents\\domain_context\\Sign up using your Email ID and Phone number.txt', 'start_index': 0}, page_content='Sign up using your Email ID and Phone number\n\nClick on the "Sign Up" button in the navigation bar.\n\nClick on the "Sign Up Manually" button.\n\nEnter your name in the text field.\n\nEnter your email address in the text field.\n\nEnter your password in the designated field.\n\nEnter your mobile number in the highlighted field on the form.\n\nVerify the CAPTCHA.\n\nClick the "Continue" button to proceed.\n\nEnter the OTP sent to your mobile number in the highlighted fields.\n\nClick the "Verify" button to proceed with the OTP verification.'), Document(metadata={'source': 'C:\<path to docs>\documents\\sample_feedback\\custom_feedback.txt', 'start_index': 0}, page_content="Feedback: I loved creating my first 3D scene using Ctruh! The dashboard was so easy to navigate. Response: That's fantastic to hear! We're glad you enjoyed the process.\n\nFeedback: I love the new color picker feature in Ctruh! It makes choosing colors so much easier. Response: We're thrilled you like it! Our team worked hard to make it user-friendly and fun to use. If you have any suggestions on how we can improve it, please let us know!\n\nFeedback: I love how customizable Ctruh is! I was able to change the screen orientation and aspect ratio to fit my needs. Response: That's one of our favorite features too! We're glad you found it helpful.\n\nFeedback: I love using Ctruh for my projects! The community support is amazing. Response: We're so glad to hear that! Our community is a big part of what makes Ctruh special. We're always here to help and support each other in our creative endeavors.\n\nFeedback: The dashboard is very intuitive! Response: We're glad you found the dashboard easy to use! Our team worked hard to make it user-friendly.\n\nFeedback: I love the new scene creation feature! Response: Thank you for trying out our new scene creation feature! We're happy to hear that it's working well for you.\n\nFeedback: The 3D text properties panel is really helpful! Response: We're glad you found the 3D text properties panel useful! It was designed to make it easy to customize your text."), Document(metadata={'source': 'C:\<path to docs>\documents\\sample_feedback\\custom_feedback.txt', 'start_index': 1219}, page_content="Feedback: The 3D text properties panel is really helpful! Response: We're glad you found the 3D text properties panel useful! It was designed to make it easy to customize your text.\n\nFeedback: I had trouble finding the reset button. Response: Sorry to hear that you had trouble finding the reset button. Can you tell us more about what happened? We'll do our best to help you out.\n\nFeedback: The documentation is not clear Response: Sorry to hear that. We are constantly working on improvements in our documentation, can you tell us more about what was not clear? We'll do our best to help you out.\n\nFeedback: The website is slow to load. Response: We apologize for the slow website performance. Our team is constantly working to improving load times. Can you check your internet connectivity is reliable?")]
+2024-08-09 21:30:52 INFO     Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2024-08-09 21:30:52 DEBUG    Starting component System
+2024-08-09 21:30:52 DEBUG    Starting component Posthog
+2024-08-09 21:30:52 DEBUG    Starting component SqliteDB
+2024-08-09 21:30:52 DEBUG    Starting component LocalSegmentManager
+2024-08-09 21:30:52 DEBUG    Starting component SegmentAPI
+2024-08-09 21:30:52 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:30:52 DEBUG    Starting new HTTPS connection (1): app.posthog.com:443
+2024-08-09 21:30:53 DEBUG    https://app.posthog.com:443 "POST /batch/ HTTP/11" 200 15
+2024-08-09 21:30:54 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:30:54 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:30:56 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:30:56 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:30:59 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:30:59 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:31:01 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:31:01 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:31:03 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:31:03 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:31:06 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:31:06 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:31:08 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:31:08 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:31:10 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:31:10 DEBUG    Starting new HTTP connection (1): localhost:11434
+2024-08-09 21:31:13 DEBUG    http://localhost:11434 "POST /api/embeddings HTTP/11" 200 None
+2024-08-09 21:31:13 DEBUG    Starting component PersistentLocalHnswSegment
+2024-08-09 21:31:13 INFO     Done creating vectorDB - C:\<path to docs>/vectordb/

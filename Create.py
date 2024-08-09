@@ -1,6 +1,22 @@
+#######################################################################################
+##                                        Create                                     ##
+##                                                                                   ##
+##  Description: This is used to create the documents and the vector DB used for     ##
+##               customizing the LLM.                                                ##
+##  Author: Vinayaka Jujare                                                          ##
+##  Usage: Just execute the file with the appropriate options                        ##
+##      python Create.py --create_doc True --create_db True                          ##                                              ##
+#######################################################################################
+
 import os
 import time
-import pandas as pd
+import logging
+import argparse
+
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.vectorstores import Chroma
 
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
@@ -8,21 +24,49 @@ from selenium.webdriver.edge.options import Options
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.common.by import By
 
+logger = logging.getLogger('run.log')
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    filename='run.log',
+    encoding='utf-8', level=logging.DEBUG,
+    datefmt='%Y-%m-%d %H:%M:%S',)
+
 
 class DOCUMENTS:
+    """Handle all the document creation functions."""
     def __init__(self):
         """
-        Init function for the class.
+        Init function for the DOCUMENTS class.
         """
-        self.doc_dir = os.getcwd() + "/documents/"
-        if not os.path.isdir(self.doc_dir):
-            os.makedirs(self.doc_dir)
+        # Path where all the documents are stored
+        self.main_doc_dir = os.getcwd() + "/documents/"
+        if not os.path.isdir(self.main_doc_dir):
+            logger.debug("Creating folder <{}> to store documents".format(self.main_doc_dir))
+            os.makedirs(self.main_doc_dir)
 
-        self.feedback_doc = os.getcwd() + "/documents/feedback_responses.txt"
+        # Path where all the context based documents are stored.
+        self.ctx_doc_dir = self.main_doc_dir + "/domain_context/"
+        if not os.path.isdir(self.ctx_doc_dir):
+            logger.debug("Creating folder <{}> to store context specific documents".format(self.ctx_doc_dir))
+            os.makedirs(self.ctx_doc_dir)
+
+        # Path where all the sample feedback-response documents are stored.
+        self.fbr_doc_dir = self.main_doc_dir + "/sample_feedback/"
+        if not os.path.isdir(self.fbr_doc_dir):
+            logger.debug("Creating folder <{}> to store feedback-response specific documents".format(self.fbr_doc_dir))
+            os.makedirs(self.fbr_doc_dir)
+
+        # Path where custom feedback-responses document is stored
+        self.custom_feedback_doc = self.fbr_doc_dir + "custom_feedback.txt"
+
+        logger.debug("Main Documents dir - {}".format(self.main_doc_dir))
+        logger.debug("Domain context documents dir - {}".format(self.ctx_doc_dir))
+        logger.debug("Feedback-response documents dir - {}".format(self.fbr_doc_dir))
+        logger.debug("Custom Feedback-response document file - {}".format(self.custom_feedback_doc))
 
     def __get_docs_from_web(self, url):
         """
-        Parse the web and return the content.
+        Parse the web and return the content for the documents.
 
         @return: return the content of the web page parsed.
         """
@@ -35,10 +79,13 @@ class DOCUMENTS:
         driver = webdriver.Edge(service=service, options=options)
 
         # Open the URL
+        logger.debug("Opening the URL - {}".format(url))
         driver.get(url)
 
         # Give the page some time to load
-        time.sleep(5)  # Adjust the sleep time if necessary
+        sleep_for = 5
+        logger.debug("Waiting for {}sec for the URL to load".format(sleep_for))
+        time.sleep(sleep_for)
 
         # Extract the textual content
         text = driver.find_element(By.TAG_NAME, 'body').text
@@ -49,13 +96,14 @@ class DOCUMENTS:
         # Close the driver
         driver.quit()
 
+        logger.debug("Done parsing the URL - {}".format(url))
         return text
     
-    def __url_docs(self):
+    def _url_docs(self):
         """
-        Process the URLs and create documents out of them
+        Process the URLs and create documents out of them.
         """
-        # These URLs contain all the relevant information on ctruh, which can be used for Q&A portion of the chatbot.
+        # These URLs contain all the relevant information on ctruh, which can be used to give domain_context for the LLM.
         urls = ["https://ctruhtech.notion.site/Scheduling-a-Demo-9e1166c8d24246eb80ef3efcdaaf07b6?pvs=25",
                 "https://ctruhtech.notion.site/Dashboard-Overview-8f3bc3ac26cd4a0096d53931945155dd?pvs=25",
                 "https://ctruhtech.notion.site/How-to-Sign-in-to-Ctruh-6b1a546dda96499ba6f2ff95d4ef4ab1?pvs=25",
@@ -91,20 +139,23 @@ class DOCUMENTS:
                 "https://ctruhtech.notion.site/Downloading-Scene-as-Image-94f5b29c684c4da8bf1ff2e629a5f6fe?pvs=25",
                 "https://ctruhtech.notion.site/Publishing-an-XR-Experience-0cc1af628936456b9b46cf08fa50250c?pvs=25",
                 "https://ctruhtech.notion.site/Downloading-the-Project-as-GLB-440db156def44d6db1f1191a52a6cc5e?pvs=25"]
-        
+
         for url in urls:
+            # For each URL, get the text content
+            logger.info("Picked up URL - {}".format(url))
             text = self.__get_docs_from_web(url)
+            # Get the name of the file to store the doc content
             file_name = text.split("\n")[0] + ".txt"
             # Dump the textual content into a doc file
-            with open(self.doc_dir + "/" + file_name, 'w') as fp:
+            with open(self.ctx_doc_dir + "/" + file_name, 'w') as fp:
                 fp.write(text)
-            print("Done creating --", file_name)
 
-    def __feedback_docs(self):
+            logger.info("Done creating document - {}".format(file_name))
+
+    def _feedback_doc(self):
         """
-        Create doc with the user feedback and the response from the LLM to refer
+        Create doc with custom user feedback and the responses from the LLM to refer
         """
-        # Define some sample feedback and responses
         data = [
             (
                 "Feedback: I loved creating my first 3D scene using Ctruh! The dashboard was so easy to navigate.",
@@ -149,21 +200,91 @@ class DOCUMENTS:
         ]
 
         # Dump the feedback data into a doc file
-        with open(self.feedback_doc, 'w') as fp:
+        logger.info("Started writing custom feedback data")
+        with open(self.custom_feedback_doc, 'w') as fp:
             for i in data:
                 for j in i:
                     fp.write(j + '\n')
                 fp.write('\n')
-        print("Done creating --", self.feedback_doc)
+
+        logger.info("Done creating document - {}".format(self.custom_feedback_doc))
 
     def create_documents(self):
         """
         Create documents for the LLM to be fine-tuned.
         """
-        self.__url_docs()
-        #self.__feedback_docs()
+        self._url_docs()
+        self._feedback_doc()
 
-      
+
+class VECTORDB():
+    """handle all Vector DB creation functionalities."""
+    def __init__(self, main_doc_dir):
+        """
+        Init function of VECTORDB class.
+        """
+        # Path where the VectorDB is created
+        self.db_dir = os.getcwd() + "/vectordb/"
+        if not os.path.isdir(self.db_dir):
+            logger.debug("Creating folder <{}> to store vector DB".format(self.db_dir))
+            os.makedirs(self.db_dir)
+
+        # path where the documents are present
+        self.main_doc_dir = main_doc_dir
+        # vectorstore object returned
+        self.vectorstore = None
+        # LLM to be used
+        self.llm = "llama3.1"
+
+    def create_vector_db(self):
+        """
+        Create vector DB by updating the LLM with the relevant documents.
+        """
+        # Load documents from a directory
+        loader = DirectoryLoader(self.main_doc_dir, glob="**/*.txt")
+        documents = loader.load()
+        logger.debug("Loaded all the files under {}".format(self.main_doc_dir))
+
+        # Create embeddings
+        embeddings = OllamaEmbeddings(model=self.llm, show_progress=True)
+        logger.debug("Created embeddings for {}".format(self.llm))
+
+        # Split texts recursively
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1500,
+            chunk_overlap=300,
+            add_start_index=True,
+        )
+
+        # Split documents into chunks
+        texts = text_splitter.split_documents(documents)
+        logger.debug("Split documents: \n{}".format(texts))
+
+        # Create vector store
+        self.vectorstore = Chroma.from_documents(
+            documents=texts, 
+            embedding= embeddings,
+            persist_directory=self.db_dir
+        )
+
+        logger.info("Done creating vectorDB - {}".format(self.db_dir))
+
+
 if __name__ == "__main__":
+    # Parse the arguments passed
+    parser = argparse.ArgumentParser(description='Create document corpus and vectorDB used to update a local LLM.')
+    parser.add_argument('--create_doc', default=False,
+                        help='Create document corpus (default: false)',
+                        type=bool)
+    parser.add_argument('--create_db', default=False,
+                        help='Create vectorDB (default: false)',
+                        type=bool)
+    args = parser.parse_args()
+
+    # Create the class objects
     doc_obj = DOCUMENTS()
-    doc_obj.create_documents()
+    vec_obj = VECTORDB(main_doc_dir=doc_obj.main_doc_dir)
+    if args.create_doc is True:
+        doc_obj.create_documents()
+    if args.create_db is True:
+        vec_obj.create_vector_db()
