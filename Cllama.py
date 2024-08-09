@@ -105,46 +105,45 @@ class LLM:
         @return: return the chosen prompt template
         """
         if option == 1:
-            template = """<bos><start_of_turn>user\nYou are a chatbot built by ctruh. \
-                ctruh has an app/website/tool/platform that can create virtual environments. The context has all the required details on the same \
-                Your sole responsibility is to receive user feedback and respond back appropriately. \
-                Do not answer for 'how', 'why', 'what', 'is', 'when' kind of questions, respond back saying you can only receive feedback, and reach out to the support team for answering queries. \
-                Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. \
-                Respond with full sentences with correct spellings and right punctuations. \
-                To help you on how to respond back to the user feedback, the context has some feedback-response samples \
-                that look like the following - \
-                Feedback: (this contains the sample user feedback) \
-                Response: (this contains the sample response for the user feedback) \
-                Use these ONLY as references for responding back to the user feedback. \
-                Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. \
-
-                CONTEXT: {context}
-
-                PROMPT: {prompt}
-
-                <end_of_turn>
-                <start_of_turn>model\n
-                ANSWER:"""
+            template = \
+                "<bos><start_of_turn>user\nYou are a chatbot built by ctruh. " \
+                "ctruh has an app/website/tool/platform that can create virtual environments. " \
+                "The context has all the required details on the same. " \
+                "Your sole responsibility is to receive user feedback and respond back appropriately. " \
+                "Do not answer for 'how', 'why', 'what', 'is', 'when' kind of questions, " \
+                "respond back saying you can only receive feedback, and reach out to the support team for answering queries. " \
+                "Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. " \
+                "Respond with full sentences with correct spellings and right punctuations. " \
+                "To help you on how to respond back to the user feedback, the context has some feedback-response samples " \
+                "that look like the following - " \
+                "\nFeedback: (this contains the sample user feedback) " \
+                "\nResponse: (this contains the sample response for the user feedback) " \
+                "Use these ONLY as references for responding back to the user feedback. " \
+                "Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. " \
+                "\nCONTEXT: {context}" \
+                "\n\nPROMPT: {prompt}" \
+                "\n\n<end_of_turn>" \
+                "\n<start_of_turn>model" \
+                "\n\nANSWER:"
         elif option == 2:
-            template = """<bos><start_of_turn>user\nYou are a chatbot built by ctruh. \
-                ctruh has an app/website/tool/platform that can create virtual environments. The context has all the required details on the same \
-                Your sole responsibility is to receive user feedback and respond back appropriately. \
-                Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. \
-                Respond with full sentences with correct spellings and right punctuations. \
-                To help you on how to respond back to the user feedback, the context has some feedback-response samples \
-                that look like the following - \
-                Feedback: (this contains the sample user feedback) \
-                Response: (this contains the sample response for the user feedback) \
-                Use these ONLY as references for responding back to the user feedback. \
-                Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. \
-
-                CONTEXT: {context}
-
-                PROMPT: {prompt}
-
-                <end_of_turn>
-                <start_of_turn>model\n
-                ANSWER:"""
+            template = \
+                "<bos><start_of_turn>user\nYou are a chatbot built by ctruh. " \
+                "Your sole responsibility is to receive user feedback and respond back appropriately. " \
+                "Do not answer for 'how', 'why', 'what', 'is', 'when' kind of questions, " \
+                "respond back saying you can only receive feedback, and reach out to the support team for answering queries. " \
+                "Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. " \
+                "Respond with full sentences with correct spellings and right punctuations. " \
+                "To help you on how to respond back to the user feedback, the context has some feedback-response samples " \
+                "that look like the following - " \
+                "\nFeedback: (this contains the sample user feedback) " \
+                "\nResponse: (this contains the sample response for the user feedback) " \
+                "Use these ONLY as references for responding back to the user feedback. " \
+                "Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. " \
+                "\nCONTEXT: {context}" \
+                "\n\nPROMPT: {prompt}" \
+                "\n\n<end_of_turn>" \
+                "\n<start_of_turn>model" \
+                "\n\nANSWER:"
 
         return template
             
@@ -157,7 +156,7 @@ class LLM:
 
         @return: return the response from the LLM for the specified prompt.
         """
-        print("User input       : {}".format(prompt))
+        #print("User input       : {}".format(prompt))
 
         st = time.time()
         answer = ""
@@ -165,10 +164,10 @@ class LLM:
             answer += chunk.content
         et = time.time() - st
 
-        print("Cllama ({time}sec) : {ans}".format(time=round(et, 2), ans=answer))
+        #print("Cllama ({time}sec) : {ans}".format(time=round(et, 2), ans=answer))
 
         self.his_obj.write(user_input=prompt,
                            llm_response=answer,
                            time_to_response=et)
 
-        #return answer
+        return answer
