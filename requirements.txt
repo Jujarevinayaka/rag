@@ -1,0 +1,8 @@
+evaluate==0.4.2
+Flask==1.1.2
+Flask==2.2.5
+langchain==0.2.12
+langchain_community==0.2.11
+langchain_text_splitters==0.2.2
+selenium==4.23.1
+webdriver_manager==4.0.2
