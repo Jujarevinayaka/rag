@@ -5,7 +5,7 @@
 ##  Author: Vinayaka Jujare                                                          ##
 ##  Usage: Runing this as an application opens the server http://localhost:5000/     ##
 ##         POST: post a query to Cllama and get a response                           ##
-##         GET : get the BLEU score of Cllama                                        ##
+##         GET : get the evaluation metrics                                          ##
 ##                                                                                   ##
 ##      import requests                                                              ##
 ##      url = 'http://localhost:5000/generate-response'                              ##
@@ -13,7 +13,6 @@
 ##      requests.post(url, json=myobj)                                               ##
 ##                                                                                   ##
 ##      url = 'http://localhost:5000/metrics'                                        ##
-##      myobj = {'feedback': 'hello'}                                                ##
 ##      requests.get(url)                                                            ##
 #######################################################################################
 
