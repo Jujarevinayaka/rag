@@ -20,13 +20,18 @@
 import json
 from Cllama import LLM
 from flask import Flask, request
+import warnings
+warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
+
+# Load the custom model
+llm = LLM()
 
 
 @app.route("/")
 def index():
-  return "Use 'generate-response' to give feedback and get appropriate response!\nAnd use 'metrics' tog get the BLEU score."
+  return "POST 'generate-response' to give feedback and get appropriate response!\nGET 'metrics' tog get the BLEU score."
 
 @app.route('/generate-response', methods=['POST'])
 def generate_response():
@@ -45,6 +50,4 @@ def metrics():
 
 
 if __name__ == '__main__':
-    # Load the custom model
-    llm = LLM()
-    app.run(host="localhost", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

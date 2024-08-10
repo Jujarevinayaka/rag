@@ -30,6 +30,49 @@ backend integration for handling data storage and API interactions.
     - **Documentation**: Clarity and completeness of the documentation.
     - **Scalability Considerations**: Basic consideration for how the solution could be scaled or improved in the future.
 
+## Usage
+### Windows
+- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`
+- Download and install [Ollama](https://ollama.com/download)
+- Start Ollama service
+- [Update the env variable](https://skillsfoster.com/change-model-save-location-for-ollama-on-windows/) `OLLAMA_MODELS` with the model path from the cloned repo `current dir/models`
+- Run `python App.py` to initiate the app
+- Use requests to post feedback to the custom LLM, and get evaluation metrics
+```
+import requests
+
+# Send feedback to the LLM
+url = 'http://localhost:5000/generate-response'
+myobj = {'feedback': 'The UI is extremely intuitive.'}
+x = requests.post(url, json = myobj)
+print(x.text)
+
+# Get the evaluation metrics
+url = 'http://localhost:5000/metrics'
+x = requests.get(url)
+print(x.text)
+```
+
+### Docker
+- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`
+- Create an image (skip this step if you plan to use image available in the repository) - `docker build -t cllama:0.1 .`
+- Run the image while mounting current directory - `docker run -p 5000:5000 -d -v <current directory where the repository is cloned>/:/app cllama:0.1`
+- Use requests to post feedback to the custom LLM, and get evaluation metrics
+```
+import requests
+
+# Send feedback to the LLM
+url = 'http://127.0.0.1:5000/generate-response'
+myobj = {'feedback': 'The UI is extremely intuitive.'}
+x = requests.post(url, json = myobj)
+print(x.text)
+
+# Get the evaluation metrics
+url = 'http://127.0.0.1:5000/metrics'
+x = requests.get(url)
+print(x.text)
+```
+
 ## Approach
 - Considering the **Requirements** and the **Evaluation Criteria**, instead of fine-tuning an open-source LLM, it is better if we use [RAGs](https://aws.amazon.com/what-is/retrieval-augmented-generation/).
 - Here are some of the references talking about the differences between fine-tuning and RAG, and also which approach is appropriate for what usecase.
