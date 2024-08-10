@@ -32,12 +32,13 @@ backend integration for handling data storage and API interactions.
 
 ## Usage
 ### Windows
-- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`
-- Download and install [Ollama](https://ollama.com/download)
-- Start Ollama service
-- [Update the env variable](https://skillsfoster.com/change-model-save-location-for-ollama-on-windows/) `OLLAMA_MODELS` with the model path from the cloned repo `current dir/models`
-- Run `python App.py` to initiate the app
-- Use requests to post feedback to the custom LLM, and get evaluation metrics
+- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`.
+- Download and install [Ollama](https://ollama.com/download).
+- Download [llama3.1](https://ollama.com/library/llama3.1) model from Ollama, and move it to the `models/` folder where the repository is cloned.
+- [Update the env variable](https://skillsfoster.com/change-model-save-location-for-ollama-on-windows/) `OLLAMA_MODELS` with the full path of `models/` folder.
+- Start Ollama service.
+- Run `python App.py` to initiate the app.
+- Use requests to post feedback to the custom LLM, and get evaluation metrics.
 ```
 import requests
 
@@ -54,10 +55,11 @@ print(x.text)
 ```
 
 ### Docker
-- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`
-- Create an image (skip this step if you plan to use image available in the repository) - `docker build -t cllama:0.1 .`
-- Run the image while mounting current directory - `docker run -p 5000:5000 -d -v <current directory where the repository is cloned>/:/app cllama:0.1`
-- Use requests to post feedback to the custom LLM, and get evaluation metrics
+- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`.
+- Download [llama3.1](https://ollama.com/library/llama3.1) model from Ollama, and move it to the `models/` folder where the repository is cloned.
+- Create the docker image - `docker build -t cllama:0.1 .`.
+- Run the image while mounting current directory - `docker run -p 5000:5000 -d -v <current directory where the repository is cloned>/:/app cllama:0.1`.
+- Use requests to post feedback to the custom LLM, and get evaluation metrics.
 ```
 import requests
 
