@@ -11,7 +11,6 @@
 
 import os
 import time
-import logging
 from datetime import datetime
 from Create import DOCUMENTS, VECTORDB
 
@@ -28,25 +27,37 @@ class HISTORY():
         """
         Init function for HISTORY class.
         """
+        # No. of times to retry writing into the file
+        self.__retries = 5
         # Path to store the conversational history
         data_folder = os.getcwd() + "/history/"
         if not os.path.isdir(data_folder):
             os.makedirs(data_folder)
 
-        # Set the prefix for the file name as the date and time.
-        file_prefix = datetime.now().strftime("%d%m%YT%H%M%S")
-        self.__file_path = data_folder + file_prefix + "_db.tsv"
-        # Update the file with the headers.
-        with open(self.__file_path, 'w') as fp:
-            fp.write('user_input\tllm_response\ttime_to_response\n')
+        # File name to store all the conversations
+        self.__file_path = data_folder + "conversations_db.tsv"
+        # Update the file with the headers, if the file does not already exist.
+        if not os.path.isfile(self.__file_path):
+            with open(self.__file_path, 'w') as fp:
+                fp.write('time\tuser_input\tllm_response\ttime_to_response\n')
 
-    def write(self, user_input, llm_response, time_to_response):
+    def write(self, ts, user_input, llm_response, time_to_response):
         """
         Write the data into the history file.
         """
-        data = user_input + "\t" + llm_response + '\t' + str(time_to_response) + '\n'
-        with open(self.__file_path, 'a') as fp:
-            fp.write(data)
+        data = str(ts) + '\t' + user_input + "\t" + llm_response + '\t' + str(time_to_response) + '\n'
+
+        # If there are multiple instances of this class, all trying to write into the file,
+        # We want to handle them without throwing an exception,
+        retries = self.__retries
+        while retries > 0:
+            try:
+                with open(self.__file_path, 'a') as fp:
+                    fp.write(data)
+                    break
+            except Exception as err:
+                time.sleep(1)
+                retries -= 1
 
 
 class LLM:
@@ -166,7 +177,8 @@ class LLM:
 
         #print("Cllama ({time}sec) : {ans}".format(time=round(et, 2), ans=answer))
 
-        self.his_obj.write(user_input=prompt,
+        self.his_obj.write(ts=datetime.now(),
+                           user_input=prompt,
                            llm_response=answer,
                            time_to_response=et)
 
