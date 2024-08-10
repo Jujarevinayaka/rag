@@ -31,46 +31,46 @@ backend integration for handling data storage and API interactions.
     - **Scalability Considerations**: Basic consideration for how the solution could be scaled or improved in the future.
 
 ## Usage
-### Windows
-- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`.
-- Download and install [Ollama](https://ollama.com/download).
-- Download [llama3.1](https://ollama.com/library/llama3.1) model from Ollama, and move it to the `models/` folder where the repository is cloned.
-- [Update the env variable](https://skillsfoster.com/change-model-save-location-for-ollama-on-windows/) `OLLAMA_MODELS` with the full path of `models/` folder.
-- Start Ollama service.
+### Setup
+- Download and install [Ollama](https://ollama.com/download) - used in downloading LLMs locally.
+- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`
+- Change directory - `cd rag`
+- [Update the env variable](https://skillsfoster.com/change-model-save-location-for-ollama-on-windows/) `OLLAMA_MODELS` with the full path of `models/` folder present in the cloned repository.
+- Run `ollama pull llama3.1` to download [llama3.1](https://ollama.com/library/llama3.1) model from Ollama into the `models/` folder in the cloned repository.
+
+### Execution
+#### Native Windows
 - Run `python App.py` to initiate the app.
-- Use requests to post feedback to the custom LLM, and get evaluation metrics.
+- Open `http://localhost:5000/` to see the following message
+```
+POST 'generate-response' to give feedback and get appropriate response! GET 'metrics' tog get the Evaluation metrics.
+```
+
+#### Using Docker image
+- Create the docker image - `docker build -t cllama:0.1 .`
+- Run the image while mounting current directory - `docker run -p 5000:5000 -d -v <current directory where the repository is cloned>/:/app cllama:0.1`
+- Open `http://127.0.0.1:5000/` to see the following message
+```
+POST 'generate-response' to give feedback and get appropriate response! GET 'metrics' tog get the Evaluation metrics.
+```
+
+#### Sample query
+- Use requests module to interact with the app.
+- The conversation history is stored under `history/conversations_df.tsv`
+- POST feedback to the custom LLM.
 ```
 import requests
 
-# Send feedback to the LLM
 url = 'http://localhost:5000/generate-response'
 myobj = {'feedback': 'The UI is extremely intuitive.'}
 x = requests.post(url, json = myobj)
 print(x.text)
-
-# Get the evaluation metrics
-url = 'http://localhost:5000/metrics'
-x = requests.get(url)
-print(x.text)
 ```
-
-### Docker
-- Clone the repository - `git clone https://github.com/Jujarevinayaka/rag.git`.
-- Download [llama3.1](https://ollama.com/library/llama3.1) model from Ollama, and move it to the `models/` folder where the repository is cloned.
-- Create the docker image - `docker build -t cllama:0.1 .`.
-- Run the image while mounting current directory - `docker run -p 5000:5000 -d -v <current directory where the repository is cloned>/:/app cllama:0.1`.
-- Use requests to post feedback to the custom LLM, and get evaluation metrics.
+- GET the evaluation metrics
 ```
 import requests
 
-# Send feedback to the LLM
-url = 'http://127.0.0.1:5000/generate-response'
-myobj = {'feedback': 'The UI is extremely intuitive.'}
-x = requests.post(url, json = myobj)
-print(x.text)
-
-# Get the evaluation metrics
-url = 'http://127.0.0.1:5000/metrics'
+url = 'http://localhost:5000/metrics'
 x = requests.get(url)
 print(x.text)
 ```

@@ -31,7 +31,8 @@ llm = LLM()
 
 @app.route("/")
 def index():
-  return "POST 'generate-response' to give feedback and get appropriate response!\nGET 'metrics' tog get the BLEU score."
+  return "POST 'generate-response' to give feedback and get appropriate response! " \
+         "GET 'metrics' tog get the Evaluation metrics."
 
 @app.route('/generate-response', methods=['POST'])
 def generate_response():
