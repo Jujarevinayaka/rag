@@ -46,7 +46,7 @@ class HISTORY():
         """
         Write the data into the history file.
         """
-        data = str(ts) + '\t' + user_input + "\t" + llm_response + '\t' + \
+        data = str(ts) + '\t' + user_input + "\t" + llm_response.replace("\n", ' ') + '\t' + \
                str(time_to_response) + '\t' + str(BLEU_score) + '\n'
 
         # If there are multiple instances of this class, all trying to write into the file,
@@ -77,6 +77,13 @@ class LLM:
         self.doc_obj = DOCUMENTS()
         self.his_obj = HISTORY()
         self.vec_obj = VECTORDB(main_doc_dir=self.doc_obj.main_doc_dir)
+
+        # Path where the BLUE scores are stored
+        self.bleu_score_file = os.getcwd() + "/evaluation_metrics.tsv"
+        # Update the file with the headers, if the file does not already exist.
+        if not os.path.isfile(self.bleu_score_file):
+            with open(self.bleu_score_file, 'w') as fp:
+                fp.write('user_input\tllm_response\treference_response\tBLEU_score\n')
 
         # Read the Ollama embeddings
         embeddings = OllamaEmbeddings(model=self.vec_obj.llm, show_progress=False)
@@ -119,18 +126,15 @@ class LLM:
         """
         if option == 1:
             template = \
-                "<bos><start_of_turn>user\nYou are a chatbot built by ctruh. " \
+                "<bos><start_of_turn>user\nYou are a chatbot built by ctruh to act as a feedback responder. " \
                 "ctruh has an app/website/tool/platform that can create virtual environments. " \
-                "The context has all the required details on the same. " \
-                "Your sole responsibility is to receive user feedback and respond back appropriately. " \
+                "The following context has all the required details on the same. " \
+                "Your sole responsibility is to receive user feedback and respond back appropriately while being succinct. " \
                 "Do not answer for 'how', 'why', 'what', 'is', 'when' kind of questions, " \
-                "respond back saying you can only receive feedback, and reach out to the support team for answering queries. " \
+                "if the user asks such questions, then respond back saying you can only receive feedback, and reach out to the support team for answering queries. " \
                 "Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. " \
                 "Respond with full sentences with correct spellings and right punctuations. " \
-                "To help you on how to respond back to the user feedback, the context has some feedback-response samples " \
-                "that look like the following - " \
-                "\nFeedback: (this contains the sample user feedback) " \
-                "\nResponse: (this contains the sample response for the user feedback) " \
+                "To help you on how to respond back to the user feedback, the following context has some feedback-response samples in 'sample_feedback'. " \
                 "Use these ONLY as references for responding back to the user feedback. " \
                 "Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. " \
                 "\nCONTEXT: {context}" \
@@ -140,16 +144,16 @@ class LLM:
                 "\n\nANSWER:"
         elif option == 2:
             template = \
-                "<bos><start_of_turn>user\nYou are a chatbot built by ctruh. " \
-                "Your sole responsibility is to receive user feedback and respond back appropriately. " \
+                "<bos><start_of_turn>user\nYou are a chatbot built by ctruh to act as a feedback responder. " \
+                "ctruh has an app/website/tool/platform that can create virtual environments. " \
+                "The following context has all the required details on the same. " \
+                "Your sole responsibility is to receive user feedback and respond back appropriately while being succinct. " \
+                "Any user input that is not relevant to ctruh and is not related to the given context in 'domain_context', respond back saying that this is out of context. " \
                 "Do not answer for 'how', 'why', 'what', 'is', 'when' kind of questions, " \
-                "respond back saying you can only receive feedback, and reach out to the support team for answering queries. " \
+                "if the user asks such questions, then respond back saying you can only receive feedback, and reach out to the support team for answering queries. " \
                 "Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. " \
                 "Respond with full sentences with correct spellings and right punctuations. " \
-                "To help you on how to respond back to the user feedback, the context has some feedback-response samples " \
-                "that look like the following - " \
-                "\nFeedback: (this contains the sample user feedback) " \
-                "\nResponse: (this contains the sample response for the user feedback) " \
+                "To help you on how to respond back to the user feedback, the following context has some feedback-response samples in 'sample_feedback'. " \
                 "Use these ONLY as references for responding back to the user feedback. " \
                 "Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. " \
                 "\nCONTEXT: {context}" \
@@ -183,7 +187,7 @@ class LLM:
 
         return bleu_score
 
-    def chat(self, prompt, reference_response=None):
+    def chat(self, prompt, reference_response=None, store_history=True):
         """
         Chat with the LLM.
 
@@ -210,10 +214,68 @@ class LLM:
         if reference_response:
             BLEU_score = self.__calculate_bleu_score(reference=reference_response,
                                                 candidate=answer)
-        self.his_obj.write(ts=datetime.now(),
-                           user_input=prompt,
-                           llm_response=answer,
-                           time_to_response=et,
-                           BLEU_score=BLEU_score)
+        if store_history:
+            self.his_obj.write(ts=datetime.now(),
+                            user_input=prompt,
+                            llm_response=answer,
+                            time_to_response=et,
+                            BLEU_score=BLEU_score)
 
-        return answer
+        return (answer, BLEU_score)
+
+    def compute_overall_blue_score(self):
+        """
+        Calculate the overall BLEU score for a list of standard input prompts.
+
+        @return: overall BLEU score
+        """
+        # The input prompt and the references are going to be the documents fed to the LLM
+        input_dir = self.doc_obj.fbr_doc_dir
+        files = [os.path.join(dirpath, f) for (dirpath, dirnames, filenames) in os.walk(input_dir) for f in filenames]
+        data = []
+        for file_ in files:
+            data.append(open(file_).readlines())
+
+        # iterate through each file and get the prompts and corresponding references
+        data = []
+        for file_ in files:
+            file_data = open(file_).read()
+            file_data = file_data.replace(
+                "\n\n", '\n').replace(
+                "Feedback: ", "").replace(
+                "Response: ", "").split("\n")
+            file_data = [file_data[i: i+2] for i in range(0, len(file_data), 2)]
+            data.append(file_data)
+
+        # Iterate through each prompt, reference combination, and get the bleu score
+        with open(self.bleu_score_file, 'a') as fp:
+            for dat in data:
+                for pair in dat[:20]:
+                    if len(pair) != 2:
+                        continue
+                    prompt = pair[0]
+                    reference_response = pair[1]
+                    answer, BLEU_score = self.chat(prompt=prompt,
+                                                reference_response=reference_response,
+                                                store_history=False)
+                    line = prompt + '\t' + answer.replace("\n", ' ') + '\t' + \
+                           reference_response.replace("\n", ' ') + '\t' + str(BLEU_score) + '\n'
+                    print("prompt:",prompt)
+                    print("answer:",answer.replace("\n", ' '))
+                    print("reference_response:", reference_response.replace("\n", ' '))
+                    print("BLEU_score:", BLEU_score, '\n')
+                    #import ipdb; ipdb.set_trace()
+                    fp.write(line)
+
+        return self.get_overall_bleu_score()
+
+    def get_overall_bleu_score(self):
+        """
+        Get the average BLEU score for all the score calculated per prompt.
+
+        @return: overall BLEU score
+        """
+        import pandas as pd
+        # Read all the calculated bleu scores and compute the average
+        data = pd.read_csv(self.bleu_score_file, sep="\t")
+        return data.BLEU_score.mean() * 100

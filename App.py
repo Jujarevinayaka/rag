@@ -52,14 +52,15 @@ def generate_response():
     reference_response = data.get('reference_response')
 
     # Generate response using the model
-    response = llm.chat(prompt=feedback, reference_response=reference_response)
+    response, BLEU_score = llm.chat(prompt=feedback, reference_response=reference_response)
 
     return json.dumps({'response': response})
 
 @app.route('/metrics', methods=['GET'])
 def metrics():
     # Return the BLEU score
-    return json.dumps({'BLEU score': 0.85})
+    score = LLM().get_overall_bleu_score()
+    return json.dumps({'BLEU score': score})
 
 
 if __name__ == '__main__':

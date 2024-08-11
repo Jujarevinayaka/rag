@@ -32,7 +32,7 @@ def mock_llm(monkeypatch):
     """
     class MockLLM:
         def chat(self, prompt, reference_response):
-            return "Mock response from LLM"
+            return ("Mock response from LLM", None)
 
     monkeypatch.setattr('App.llm', MockLLM())
 
@@ -210,7 +210,7 @@ def test_metrics(client):
 
     assert response_status == 200
     assert request_url == 'http://localhost/metrics'
-    assert response_data == {"BLEU score": 0.85}
+    assert response_data == {"BLEU score": 100.0}
 
 def test_generate_response_mock_llm(client, mock_llm):
     """
