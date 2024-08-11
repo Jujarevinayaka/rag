@@ -49,9 +49,10 @@ def generate_response():
         )
 
     feedback = data['feedback']
+    reference_response = data.get('reference_response')
 
     # Generate response using the model
-    response = llm.chat(feedback)
+    response = llm.chat(prompt=feedback, reference_response=reference_response)
 
     return json.dumps({'response': response})
 

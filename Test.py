@@ -31,7 +31,7 @@ def mock_llm(monkeypatch):
     Patch the LLM object to return a mock response.
     """
     class MockLLM:
-        def chat(self, feedback):
+        def chat(self, prompt, reference_response):
             return "Mock response from LLM"
 
     monkeypatch.setattr('App.llm', MockLLM())
