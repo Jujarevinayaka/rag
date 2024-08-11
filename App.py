@@ -18,7 +18,7 @@
 
 import json
 from Cllama import LLM
-from flask import Flask, request
+from flask import Flask, request, Response
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -36,6 +36,18 @@ def index():
 @app.route('/generate-response', methods=['POST'])
 def generate_response():
     data = request.get_json()
+    if type(data) is not dict:
+        return Response(
+            "Invalid POST request, should be in the format of {'feedback': 'some feedback'}",
+            status=400,
+        )
+
+    if 'feedback' not in data.keys():
+        return Response(
+            "Invalid POST request, should be in the format of {'feedback': 'some feedback'}",
+            status=400,
+        )
+
     feedback = data['feedback']
 
     # Generate response using the model
