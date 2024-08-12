@@ -98,13 +98,13 @@ class LLM:
         # Create retriever
         retriever = db.as_retriever(
             search_type="similarity",
-            search_kwargs= {"k": 5}
+            search_kwargs= {"k": 3},
         )
 
         # Create local LLM
         llm = ChatOllama(model=self.vec_obj.llm,
-                 keep_alive="3h", 
-                 max_tokens=2048,  
+                 keep_alive="30m",
+                 max_tokens=64,
                  temperature=0)
         
         if base_instruction != "":

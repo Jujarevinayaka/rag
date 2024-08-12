@@ -251,8 +251,8 @@ class VECTORDB():
 
         # Split texts recursively
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1500,
-            chunk_overlap=300,
+            chunk_size=1000,
+            chunk_overlap=100,
             add_start_index=True,
         )
 
