@@ -231,7 +231,7 @@ class LLM:
 
         return (answer, BLEU_score)
 
-    def compute_overall_blue_score(self):
+    def compute_overall_bleu_score(self):
         """
         Calculate the overall BLEU score for a list of standard input prompts.
 
@@ -274,5 +274,5 @@ class LLM:
 ## # Compute and store overall BLEU score
 ## if __name__ == '__main__':
 ##     llm = LLM()
-##     score = llm.compute_overall_blue_score()
+##     score = llm.compute_overall_bleu_score()
 ##     print(score)
