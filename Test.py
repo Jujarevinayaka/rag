@@ -60,7 +60,7 @@ def test_landing_page(client):
 
     assert response_status == 200
     assert request_url == 'http://localhost/'
-    assert response_text == "POST 'generate-response' to give feedback and get appropriate response! GET 'metrics' tog get the Evaluation metrics."
+    assert "<title>C-bot</title>" in response_text
 
 def test_generate_response_valid(client):
     """

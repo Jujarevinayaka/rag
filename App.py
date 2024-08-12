@@ -18,7 +18,7 @@
 
 import json
 from Cllama import LLM
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -30,8 +30,7 @@ llm = LLM()
 
 @app.route("/")
 def index():
-  return "POST 'generate-response' to give feedback and get appropriate response! " \
-         "GET 'metrics' tog get the Evaluation metrics."
+  return render_template('index.html')
 
 @app.route('/generate-response', methods=['POST'])
 def generate_response():
