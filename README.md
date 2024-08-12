@@ -41,39 +41,43 @@ backend integration for handling data storage and API interactions.
 ### Execution
 #### Native Windows
 - Run `python App.py` to initiate the app.
-- Open `http://localhost:5000/` to see the following message
-```
-POST 'generate-response' to give feedback and get appropriate response! GET 'metrics' tog get the Evaluation metrics.
-```
+- Open `http://localhost:5000/` to see the landing page for the c-bot
+![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/c-bot_landing_page.PNG)
 
 #### Using Docker image
 - Create the docker image - `docker build -t cllama:0.1 .`
 - Run the image while mounting current directory - `docker run -p 5000:5000 -d -v <current directory where the repository is cloned>/:/app cllama:0.1`
-- Open `http://127.0.0.1:5000/` to see the following message
-```
-POST 'generate-response' to give feedback and get appropriate response! GET 'metrics' tog get the Evaluation metrics.
-```
+- Open `http://127.0.0.1:5000/` to see the landing page for the c-bot
+![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/c-bot_landing_page.PNG)
 
-#### Sample query
-- Use requests module to interact with the app.
+#### Examples of feedback and response
 - The conversation history is stored under `history/conversations_df.tsv`
-- POST feedback to the custom LLM.
-```
-import requests
+- User can either use the UI or requests model to send the feedback or get metrics.
+    ##### Using the UI
+    - The user can input feedback via the landing page chat UI
+    ![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/c-bot_conversation.PNG)
 
-url = 'http://localhost:5000/generate-response'
-myobj = {'feedback': 'The UI is extremely intuitive.'}
-x = requests.post(url, json = myobj)
-print(x.text)
-```
-- GET the evaluation metrics
-```
-import requests
+    ##### Using requests module
+    - Use requests module to interact with the app.
+    - POST feedback to the custom LLM.
+    ```
+    import requests
 
-url = 'http://localhost:5000/metrics'
-x = requests.get(url)
-print(x.text)
-```
+    url = 'http://localhost:5000/generate-response'  # While using windows
+    url = 'http://127.0.0.1:5000/generate-response'  # While using docker
+    myobj = {'feedback': 'The UI is extremely intuitive.'}
+    x = requests.post(url, json = myobj)
+    print(x.text)
+    ```
+    - GET the evaluation metrics
+    ```
+    import requests
+
+    url = 'http://localhost:5000/metrics'  # While running custom LLM on windows
+    url = 'http://127.0.0.1:5000/metrics'  # While using docker
+    x = requests.get(url)
+    print(x.text)
+    ```
 
 ## Approach
 - Considering the **Requirements** and the **Evaluation Criteria**, instead of fine-tuning an open-source LLM, it is better if we use [RAGs](https://aws.amazon.com/what-is/retrieval-augmented-generation/).
