@@ -41,7 +41,6 @@
         }
         .message {
             margin-bottom: 10px;
-            position: relative;
         }
         .message.user-message {
             text-align: right;
@@ -61,13 +60,6 @@
             padding: 8px;
             border-radius: 10px;
             max-width: 70%;
-        }
-        .response-time {
-            font-size: 0.8em;
-            color: #999999;
-            position: absolute;
-            bottom: -15px;
-            right: 10px;
         }
         .chat-input {
             display: flex;
@@ -168,7 +160,6 @@
             document.getElementById('user-input').value = '';
             document.getElementById('send-btn').disabled = true;
             document.getElementById('loading').style.display = 'block';
-            const startTime = new Date();
 
             fetch('/generate-response', {
                 method: 'POST',
@@ -179,10 +170,8 @@
             })
             .then(response => response.json())
             .then(data => {
-                const endTime = new Date();
-                const responseTime = (endTime - startTime) / 1000; // in seconds
                 document.getElementById('loading').style.display = 'none';
-                addMessage(data.response, 'bot-message', responseTime);
+                addMessage(data.response, 'bot-message');
                 document.getElementById('send-btn').disabled = false;
             })
             .catch(error => {
@@ -192,20 +181,13 @@
             });
         }
 
-        function addMessage(text, className, responseTime = null) {
+        function addMessage(text, className) {
             const messageContainer = document.createElement('div');
             messageContainer.classList.add('message', className);
 
             const messageText = document.createElement('p');
             messageText.textContent = text;
             messageContainer.appendChild(messageText);
-
-            if (responseTime !== null) {
-                const timeIcon = document.createElement('span');
-                timeIcon.classList.add('response-time');
-                timeIcon.textContent = `⏱️ ${responseTime}s`;
-                messageContainer.appendChild(timeIcon);
-            }
 
             document.getElementById('chat-messages').appendChild(messageContainer);
             document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
