@@ -51,10 +51,14 @@ backend integration for handling data storage and API interactions.
 ![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/c-bot_landing_page.PNG)
 
 #### Examples of feedback and response
+- Based on the testing, the response times vary between windows and docker
+    - While on windows, the response can come within 5-20sec
+    - While using docker, the response can come within 10-60sec
 - The conversation history is stored under `history/conversations_df.tsv`
 - User can either use the UI or requests model to send the feedback or get metrics.
     ##### Using the UI
     - The user can input feedback via the landing page chat UI
+    - To get metrics, the user can use the 'Get Metrics' button, which currently returns the BLEU score.
     ![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/c-bot_conversation.PNG)
 
     ##### Using requests module
@@ -63,8 +67,7 @@ backend integration for handling data storage and API interactions.
     ```
     import requests
 
-    url = 'http://localhost:5000/generate-response'  # While using windows
-    url = 'http://127.0.0.1:5000/generate-response'  # While using docker
+    url = 'http://localhost:5000/generate-response'
     myobj = {'feedback': 'The UI is extremely intuitive.'}
     x = requests.post(url, json = myobj)
     print(x.text)
@@ -73,8 +76,7 @@ backend integration for handling data storage and API interactions.
     ```
     import requests
 
-    url = 'http://localhost:5000/metrics'  # While running custom LLM on windows
-    url = 'http://127.0.0.1:5000/metrics'  # While using docker
+    url = 'http://localhost:5000/metrics'
     x = requests.get(url)
     print(x.text)
     ```
