@@ -11,6 +11,7 @@
 
 import os
 import time
+import codecs
 from datetime import datetime
 from Create import DOCUMENTS, VECTORDB
 
@@ -39,7 +40,7 @@ class HISTORY():
         self.__file_path = data_folder + "conversations_db.tsv"
         # Update the file with the headers, if the file does not already exist.
         if not os.path.isfile(self.__file_path):
-            with open(self.__file_path, 'w') as fp:
+            with codecs.open(self.__file_path, 'w', "utf-8") as fp:
                 fp.write('time\tuser_input\tllm_response\ttime_to_response\tBLEU_score\n')
 
     def write(self, ts, user_input, llm_response, time_to_response, BLEU_score):
@@ -54,7 +55,7 @@ class HISTORY():
         retries = self.__retries
         while retries > 0:
             try:
-                with open(self.__file_path, 'a') as fp:
+                with codecs.open(self.__file_path, 'a', "utf-8") as fp:
                     fp.write(data)
                     break
             except Exception as err:
@@ -78,11 +79,15 @@ class LLM:
         self.his_obj = HISTORY()
         self.vec_obj = VECTORDB(main_doc_dir=self.doc_obj.main_doc_dir)
 
-        # Path where the BLUE scores are stored
-        self.bleu_score_file = os.getcwd() + "/evaluation_metrics.tsv"
+        # Path to store the evaluation metrics
+        evaluation_metrics = os.getcwd() + "/metrics/"
+        # Input data to calculate evaluation metrics
+        self.metrics_input_file = evaluation_metrics + "/input.tsv"
+        # File name to store the BLEU score
+        self.bleu_score_file = evaluation_metrics + "/BLEU_score.tsv"
         # Update the file with the headers, if the file does not already exist.
         if not os.path.isfile(self.bleu_score_file):
-            with open(self.bleu_score_file, 'w') as fp:
+            with codecs.open(self.bleu_score_file, 'w', "utf-8") as fp:
                 fp.write('user_input\tllm_response\treference_response\tBLEU_score\n')
 
         # Read the Ollama embeddings
@@ -135,7 +140,7 @@ class LLM:
                 "Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. " \
                 "Respond with full sentences with correct spellings and right punctuations. " \
                 "To help you on how to respond back to the user feedback, the following context has some feedback-response samples in 'sample_feedback'. " \
-                "Use these ONLY as references for responding back to the user feedback. " \
+                "Use these ONLY as references for responding back to the user feedback, and do not mention any references in your responses. " \
                 "Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. " \
                 "\nCONTEXT: {context}" \
                 "\n\nPROMPT: {prompt}" \
@@ -154,7 +159,7 @@ class LLM:
                 "Format the answers appropriately and be enthusiastic and empathetic while responding back to the feedback. " \
                 "Respond with full sentences with correct spellings and right punctuations. " \
                 "To help you on how to respond back to the user feedback, the following context has some feedback-response samples in 'sample_feedback'. " \
-                "Use these ONLY as references for responding back to the user feedback. " \
+                "Use these ONLY as references for responding back to the user feedback, and do not mention any references in your responses. " \
                 "Always answer succinctly, do not give any additional information to the user other than responding back to the feedback. " \
                 "\nCONTEXT: {context}" \
                 "\n\nPROMPT: {prompt}" \
@@ -197,6 +202,9 @@ class LLM:
         @param: reference_response
             The reference response for evaluating BLEU score
 
+        @param: store_history
+            Set this to False if you do not want to store the conversational history
+
         @return: return the response from the LLM for the specified prompt.
         """
         #print("User input       : {}".format(prompt))
@@ -230,42 +238,25 @@ class LLM:
         @return: overall BLEU score
         """
         # The input prompt and the references are going to be the documents fed to the LLM
-        input_dir = self.doc_obj.fbr_doc_dir
-        files = [os.path.join(dirpath, f) for (dirpath, dirnames, filenames) in os.walk(input_dir) for f in filenames]
-        data = []
-        for file_ in files:
-            data.append(open(file_).readlines())
+        import pandas as pd
+        input_df = pd.read_csv(self.metrics_input_file, sep="\t", encoding='utf-8')
 
-        # iterate through each file and get the prompts and corresponding references
-        data = []
-        for file_ in files:
-            file_data = open(file_).read()
-            file_data = file_data.replace(
-                "\n\n", '\n').replace(
-                "Feedback: ", "").replace(
-                "Response: ", "").split("\n")
-            file_data = [file_data[i: i+2] for i in range(0, len(file_data), 2)]
-            data.append(file_data)
+        with codecs.open(self.bleu_score_file, 'a', "utf-8") as fp:
+            for index, row in input_df.iterrows():
+                prompt = row['input']
+                reference_response = row['reference_response']
 
-        # Iterate through each prompt, reference combination, and get the bleu score
-        with open(self.bleu_score_file, 'a') as fp:
-            for dat in data:
-                for pair in dat[:20]:
-                    if len(pair) != 2:
-                        continue
-                    prompt = pair[0]
-                    reference_response = pair[1]
-                    answer, BLEU_score = self.chat(prompt=prompt,
-                                                reference_response=reference_response,
-                                                store_history=False)
-                    line = prompt + '\t' + answer.replace("\n", ' ') + '\t' + \
-                           reference_response.replace("\n", ' ') + '\t' + str(BLEU_score) + '\n'
-                    print("prompt:",prompt)
-                    print("answer:",answer.replace("\n", ' '))
-                    print("reference_response:", reference_response.replace("\n", ' '))
-                    print("BLEU_score:", BLEU_score, '\n')
-                    #import ipdb; ipdb.set_trace()
-                    fp.write(line)
+                answer, BLEU_score = self.chat(prompt=prompt,
+                                            reference_response=reference_response,
+                                            store_history=False)
+
+                line = prompt + '\t' + answer.replace("\n", ' ') + '\t' + \
+                       reference_response.replace("\n", ' ') + '\t' + str(BLEU_score) + '\n'
+                print("prompt:",prompt)
+                print("answer:",answer.replace("\n", ' '))
+                print("reference_response:", reference_response.replace("\n", ' '))
+                print("BLEU_score:", BLEU_score, '\n')
+                fp.write(line)
 
         return self.get_overall_bleu_score()
 
@@ -278,4 +269,10 @@ class LLM:
         import pandas as pd
         # Read all the calculated bleu scores and compute the average
         data = pd.read_csv(self.bleu_score_file, sep="\t")
-        return data.BLEU_score.mean() * 100
+        return data.BLEU_score.mean()
+
+## # Compute and store overall BLEU score
+## if __name__ == '__main__':
+##     llm = LLM()
+##     score = llm.compute_overall_blue_score()
+##     print(score)

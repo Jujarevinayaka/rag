@@ -210,7 +210,7 @@ def test_metrics(client):
 
     assert response_status == 200
     assert request_url == 'http://localhost/metrics'
-    assert response_data == {"BLEU score": 100.0}
+    assert response_data == {"BLEU score": 0.6018905870980813}
 
 def test_generate_response_mock_llm(client, mock_llm):
     """
