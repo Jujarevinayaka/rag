@@ -13,7 +13,7 @@ Please refer the following for more details
 ### Overview
 - The chatbot system is designed to process customer feedback and provide relevant responses using a custom-built language model.
 - The system consists of a front-end interface and a back-end application that integrates with a Retrieval-Augmented Generation (RAG) model for generating responses.
-![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/Arch.PNG)
+![alt text](https://github.com/Jujarevinayaka/rag/blob/main/imgs/Arch.png)
 
 ### Front-End Interface
 - **HTML Interface**
